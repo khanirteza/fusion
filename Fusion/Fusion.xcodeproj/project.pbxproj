@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		C7C08D4FE180AC8BE65C5AB8 /* Pods_Fusion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */; };
 		F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F32371F2B942E00B7AEB2 /* AppDelegate.swift */; };
-		F55F323A1F2B942E00B7AEB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F32391F2B942E00B7AEB2 /* ViewController.swift */; };
+		F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F32391F2B942E00B7AEB2 /* LoginViewController.swift */; };
 		F55F323D1F2B942E00B7AEB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55F323B1F2B942E00B7AEB2 /* Main.storyboard */; };
 		F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */; };
 		F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55F32411F2B942E00B7AEB2 /* Assets.xcassets */; };
 		F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55F32431F2B942E00B7AEB2 /* LaunchScreen.storyboard */; };
+		F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +23,14 @@
 		9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fusion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55F32341F2B942E00B7AEB2 /* Fusion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fusion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55F32371F2B942E00B7AEB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F55F32391F2B942E00B7AEB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F55F32391F2B942E00B7AEB2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F55F323C1F2B942E00B7AEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F55F323F1F2B942E00B7AEB2 /* Fusion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fusion.xcdatamodel; sourceTree = "<group>"; };
 		F55F32411F2B942E00B7AEB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55F32441F2B942E00B7AEB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F55F32461F2B942E00B7AEB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,15 +83,25 @@
 		F55F32361F2B942E00B7AEB2 /* Fusion */ = {
 			isa = PBXGroup;
 			children = (
+				F55F324E1F2B9D1800B7AEB2 /* Supporting Files */,
 				F55F32371F2B942E00B7AEB2 /* AppDelegate.swift */,
-				F55F32391F2B942E00B7AEB2 /* ViewController.swift */,
+				F55F32391F2B942E00B7AEB2 /* LoginViewController.swift */,
+				F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */,
 				F55F323B1F2B942E00B7AEB2 /* Main.storyboard */,
 				F55F32411F2B942E00B7AEB2 /* Assets.xcassets */,
-				F55F32431F2B942E00B7AEB2 /* LaunchScreen.storyboard */,
 				F55F32461F2B942E00B7AEB2 /* Info.plist */,
-				F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */,
 			);
 			path = Fusion;
+			sourceTree = "<group>";
+		};
+		F55F324E1F2B9D1800B7AEB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F55F32431F2B942E00B7AEB2 /* LaunchScreen.storyboard */,
+				F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */,
+				F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +139,7 @@
 				TargetAttributes = {
 					F55F32331F2B942E00B7AEB2 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -153,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */,
+				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
 				F55F323D1F2B942E00B7AEB2 /* Main.storyboard in Resources */,
 			);
@@ -213,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55F323A1F2B942E00B7AEB2 /* ViewController.swift in Sources */,
+				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 			);
@@ -236,6 +251,7 @@
 				F55F32441F2B942E00B7AEB2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -349,10 +365,13 @@
 			baseConfigurationReference = 43C883C88A0204B070493FFE /* Pods-Fusion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Fusion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.irteza.Fusion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fusion/Fusion-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,10 +382,12 @@
 			baseConfigurationReference = 96C8003A3331F213E41C16BD /* Pods-Fusion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Fusion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.irteza.Fusion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Fusion/Fusion-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,6 +412,7 @@
 				F55F324B1F2B942E00B7AEB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
