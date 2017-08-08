@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -319,7 +319,7 @@
             </objects>
             <point key="canvasLocation" x="1095" y="123"/>
         </scene>
-        <!--TV-->
+        <!--View Controller-->
         <scene sceneID="UCN-e2-1XP">
             <objects>
                 <viewController id="86i-qr-2kW" customClass="TVViewController" customModule="Fusion" customModuleProvider="target" sceneMemberID="viewController">
@@ -335,7 +335,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fusion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHB-Hn-uUA">
-                                        <rect key="frame" x="145" y="20" width="85" height="36"/>
+                                        <rect key="frame" x="145.5" y="20" width="84.5" height="36"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -358,6 +358,62 @@
                                     <constraint firstItem="SFj-f2-2wb" firstAttribute="bottom" secondItem="OHB-Hn-uUA" secondAttribute="bottom" id="jzc-SC-G8b"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-qs-QPb">
+                                <rect key="frame" x="-20" y="95" width="415" height="255"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu3-hD-EUO">
+                                        <rect key="frame" x="301" y="20" width="78" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                        <state key="normal" title="See All">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SeeAllPopularTVShows:" destination="86i-qr-2kW" eventType="touchUpInside" id="R9e-hV-n0X"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Most Popular TV Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfQ-MI-kA4">
+                                        <rect key="frame" x="36" y="25" width="194" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L0f-K3-nxf">
+                                        <rect key="frame" x="20" y="54" width="375" height="181"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h5O-D2-JfC">
+                                            <size key="itemSize" width="124" height="174"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popularTVShowCellID" id="qlp-J7-XZ1">
+                                                <rect key="frame" x="0.0" y="3.5" width="124" height="174"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="174"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-Wc-yzm">
+                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="174"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="86i-qr-2kW" id="tIY-5T-GZU"/>
+                                            <outlet property="delegate" destination="86i-qr-2kW" id="pF2-Tl-zm2"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -366,16 +422,70 @@
                             <constraint firstItem="3g1-wO-4LO" firstAttribute="top" secondItem="fhZ-8M-CA4" secondAttribute="top" id="IuB-fP-GPo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="TV" image="tv-icon" selectedImage="tv-icon" id="gbz-0r-LyX"/>
                     <navigationItem key="navigationItem" id="iph-EM-A14"/>
                     <connections>
                         <outlet property="userPhotoImageView" destination="SFj-f2-2wb" id="Rlo-xz-LVp"/>
                         <segue destination="HPB-Lv-L2g" kind="show" action="showDetailViewController:sender:" id="mwi-UO-G99"/>
+                        <segue destination="J3h-NJ-kYp" kind="show" identifier="TVShowSegue" id="hrU-kK-Ame"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mh-2z-N18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="2104"/>
+            <point key="canvasLocation" x="2111.1999999999998" y="2103.5982008995502"/>
+        </scene>
+        <!--Shows Table View Controller-->
+        <scene sceneID="pA5-fn-BLb">
+            <objects>
+                <viewController id="J3h-NJ-kYp" customClass="TVShowsTableViewController" customModule="Fusion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yeR-2U-I9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="g5a-yE-RIs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5NA-ha-MU5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-h9-xBH">
+                                <rect key="frame" x="0.0" y="156" width="375" height="511"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TVShowsCellID" rowHeight="149" id="CYj-he-C3R">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="149"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYj-he-C3R" id="86e-pT-Ezr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5w1-FK-L08">
+                                                    <rect key="frame" x="8" y="-5" width="126" height="154"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdB-24-ONt">
+                                                    <rect key="frame" x="142" y="56" width="214" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="J3h-NJ-kYp" id="Rq0-5t-1Xs"/>
+                                    <outlet property="delegate" destination="J3h-NJ-kYp" id="fPM-Hp-7iB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ht-2F-94B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="2103.5982008995502"/>
         </scene>
         <!--Home-->
         <scene sceneID="xSZ-4R-YTp">
@@ -502,7 +612,7 @@
                     <connections>
                         <segue destination="aYh-9g-Foc" kind="relationship" relationship="viewControllers" id="DVH-xp-Yv3"/>
                         <segue destination="4O0-xp-xRu" kind="relationship" relationship="viewControllers" id="zGO-e3-6Px"/>
-                        <segue destination="86i-qr-2kW" kind="relationship" relationship="viewControllers" id="HvI-6V-n3u"/>
+                        <segue destination="NbB-fe-4Sg" kind="relationship" relationship="viewControllers" id="HvI-6V-n3u"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="At9-ou-iQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -566,6 +676,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWa-aO-fLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="569" y="2105"/>
+        </scene>
+        <!--TV-->
+        <scene sceneID="z6h-do-FNl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NbB-fe-4Sg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="TV" image="tv-icon" selectedImage="tv-icon" id="gbz-0r-LyX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kQJ-wa-GRL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="86i-qr-2kW" kind="relationship" relationship="rootViewController" id="0dt-KF-gfK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hG-o7-r4w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="1340"/>
         </scene>
     </scenes>
     <resources>
