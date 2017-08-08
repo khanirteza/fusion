@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Mh-2z-N18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2111.1999999999998" y="2103.5982008995502"/>
+            <point key="canvasLocation" x="2556" y="2104"/>
         </scene>
         <!--Home-->
         <scene sceneID="xSZ-4R-YTp">
@@ -493,6 +493,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dD7-tJ-FHf" kind="show" identifier="tableViewCellSegue" id="qIQ-TS-sct"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -503,10 +506,76 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mytableView" destination="XLv-fE-FZn" id="qPQ-eH-Lfk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8O2-2c-PQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908" y="2905.9970014992505"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="AbM-1m-PfK">
+            <objects>
+                <viewController id="dD7-tJ-FHf" customClass="DetailsViewController" customModule="Fusion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W0W-0P-F6m"/>
+                        <viewControllerLayoutGuide type="bottom" id="tAD-fj-Dn1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zhn-sn-zMn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-HJ-Flv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewi-ky-swP">
+                                <rect key="frame" x="16" y="181" width="102" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Released:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H55-Jy-njE">
+                                <rect key="frame" x="126" y="244" width="194" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-aB-7t8">
+                                <rect key="frame" x="16" y="353" width="194" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview lines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpj-zB-Jvb">
+                                <rect key="frame" x="16" y="389" width="343" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ3-PN-07m">
+                                <rect key="frame" x="126" y="281" width="194" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="overviewLabel" destination="Fpj-zB-Jvb" id="hnN-G2-j6W"/>
+                        <outlet property="posterImage" destination="ewi-ky-swP" id="Wt2-up-QDu"/>
+                        <outlet property="ratingLabel" destination="zQ3-PN-07m" id="GSN-2y-UlY"/>
+                        <outlet property="releasedLabel" destination="H55-Jy-njE" id="DbE-FH-h90"/>
+                        <outlet property="wallPosterImage" destination="8Gf-HJ-Flv" id="CmJ-U3-20j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQ7-lp-k0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687.2" y="2524.5877061469268"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eac-37-AWl">
@@ -524,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Li2-ez-a56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1772" y="2973"/>
+            <point key="canvasLocation" x="2556" y="2955"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qfD-DI-ptG">
@@ -610,6 +679,9 @@
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="120" height="138"/>
+                                        <connections>
+                                            <segue destination="dD7-tJ-FHf" kind="show" identifier="nowPlayingDetails" id="weI-9B-JUB"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -642,6 +714,9 @@
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="120" height="138"/>
+                                        <connections>
+                                            <segue destination="dD7-tJ-FHf" kind="show" identifier="upcomingDetails" id="BOg-Ee-3Vd"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -674,6 +749,9 @@
                                             </subviews>
                                         </view>
                                         <size key="customSize" width="120" height="138"/>
+                                        <connections>
+                                            <segue destination="dD7-tJ-FHf" kind="show" identifier="topRatedDetails" id="pcT-5p-2KF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -775,5 +853,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="SC6-bB-3lq"/>
         <segue reference="ZJE-vM-E7S"/>
+        <segue reference="pcT-5p-2KF"/>
     </inferredMetricsTieBreakers>
 </document>

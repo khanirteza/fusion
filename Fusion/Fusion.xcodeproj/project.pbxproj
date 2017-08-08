@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4C1F3944E90031260F /* SeeAllViewController.swift */; };
+		9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4E1F3A0A560031260F /* DetailsViewController.swift */; };
 		C7C08D4FE180AC8BE65C5AB8 /* Pods_Fusion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */; };
 		F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F51149AF1F2BDCD40006268B /* FusionDatabase.xcdatamodeld */; };
 		F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52634D11F2DA18A008B068E /* SignUpViewController.swift */; };
@@ -31,6 +32,7 @@
 		96C8003A3331F213E41C16BD /* Pods-Fusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.release.xcconfig"; sourceTree = "<group>"; };
 		9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fusion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E601C4C1F3944E90031260F /* SeeAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
+		9E601C4E1F3A0A560031260F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F51149B01F2BDCD40006268B /* FusionDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FusionDatabase.xcdatamodel; sourceTree = "<group>"; };
 		F52634D11F2DA18A008B068E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F55650141F2F73DE00350FD4 /* UserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataProvider.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F5756DE81F2EC3DC0037834B /* HomeViewController.swift */,
 				F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */,
 				9E601C4C1F3944E90031260F /* SeeAllViewController.swift */,
+				9E601C4E1F3A0A560031260F /* DetailsViewController.swift */,
 				F5756DEC1F2EC3F20037834B /* TVViewController.swift */,
 				F55650141F2F73DE00350FD4 /* UserDataProvider.swift */,
 				F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */,
@@ -281,6 +284,7 @@
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 				F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */,
 				F5756DE71F2EB4570037834B /* Extensions.swift in Sources */,
+				9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */,
 				F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

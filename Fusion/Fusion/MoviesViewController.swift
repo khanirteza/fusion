@@ -24,7 +24,6 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let nowPlayingUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
         dataToNowPlaying(urlString: nowPlayingUrlString)
         
@@ -184,6 +183,28 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Top Rated"
             destinationVC.urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+        }
+        if segue.identifier == "nowPlayingDetails" {
+            let destinationVC = segue.destination as! DetailsViewController
+            let cell = sender as? UICollectionViewCell
+            let indexPath = self.nowPlayingCollectionView.indexPath(for: cell!)
+            
+            destinationVC.title = nowPlayingMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.detailArray = nowPlayingMovieDetails[indexPath!.row]
+        }
+        if segue.identifier == "upcomingDetails" {
+            let destinationVC = segue.destination as! DetailsViewController
+            let cell = sender as? UICollectionViewCell
+            let indexPath = self.upcomingCollectionView.indexPath(for: cell!)
+            destinationVC.title = upcomingMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.detailArray = upcomingMovieDetails[indexPath!.row]
+        }
+        if segue.identifier == "topRatedDetails" {
+            let destinationVC = segue.destination as! DetailsViewController
+            let cell = sender as? UICollectionViewCell
+            let indexPath = self.topRatedCollectionView.indexPath(for: cell!)
+            destinationVC.title = topRatedMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.detailArray = topRatedMovieDetails[indexPath!.row]
         }
     }
 }
