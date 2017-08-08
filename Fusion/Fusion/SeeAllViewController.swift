@@ -8,6 +8,7 @@
 import UIKit
 
 class SeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var mytableView: UITableView!
     
     var urlString: String?
     var MovieDetails = [[String:Any]]()
@@ -56,8 +57,17 @@ class SeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }catch let err {
             print(err)
         }
-        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tableViewCellSegue" {
+            let destinationVC = segue.destination as! DetailsViewController
+            let indexPath = self.mytableView.indexPathForSelectedRow
+            destinationVC.title = MovieDetails[indexPath!.row]["MovieTitle"] as? String
+            
+            destinationVC.detailArray = MovieDetails[indexPath!.row]
+        }
     }
     
 }
