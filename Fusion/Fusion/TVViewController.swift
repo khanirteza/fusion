@@ -27,9 +27,9 @@ class TVViewController: UIViewController, UICollectionViewDataSource, UICollecti
     
     func fetchPopularTVShows(){
         
-        let urlString = "https://api.themoviedb.org/3/tv/popular?api_key=90b6573b1ed4a6ccaf1a5749ca8bfd46&language=en-US&page=1"
+        let popularUrlString = "https://api.themoviedb.org/3/tv/popular?api_key=90b6573b1ed4a6ccaf1a5749ca8bfd46&language=en-US&page=1"
+        let url = URL(string: popularUrlString)
         
-        let url = URL(string: urlString)
         
         
         do{
