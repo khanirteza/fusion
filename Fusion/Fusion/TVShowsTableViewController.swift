@@ -15,8 +15,6 @@ class TVShowsTableViewController: UIViewController, UITableViewDelegate,UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let show = popularShows[0]
-//        print(show["name"] as! String)
 //        // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
