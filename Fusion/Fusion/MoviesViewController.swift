@@ -14,12 +14,14 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
     @IBOutlet weak var upcomingCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
+    @IBOutlet weak var mostPopularCollectionView: UICollectionView!
     
     @IBOutlet weak var userPhotoImageView: UIImageView!
  
     var nowPlayingMovieDetails = [[String:Any]]()
     var upcomingMovieDetails = [[String:Any]]()
     var topRatedMovieDetails = [[String:Any]]()
+    var mostPopularMovieDetails = [[String:Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,34 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         let topRatedUrlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
         dataToTopRated(urlString: topRatedUrlString)
         
+        let mostPopularString = "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+        dataToMostPopular(urlString: mostPopularString)
+        
         userPhotoImageView.image = UserDataProvider.getUserPhoto()
         
+    }
+    func dataToMostPopular(urlString: String) {
+        let url = URL.init(string: urlString)
+        let baseUrl = "http://image.tmdb.org/t/p/w780/"
+        do {
+            let data = try Data.init(contentsOf: url!)
+            let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
+            let results = response["results"] as! [[String:Any]]
+            for temp in results {
+                let id = temp["id"] as! Double
+                let voteAverage = temp["vote_average"] as! Double
+                let title = temp["title"] as! String
+                let poster = temp["poster_path"] as! String
+                let posterurl = baseUrl + poster
+                let backdrop = temp["backdrop_path"] as! String
+                let backdropurl = baseUrl + backdrop
+                let overview = temp["overview"] as! String
+                let releaseDate = temp["release_date"] as! String
+                mostPopularMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+            }
+        } catch let err {
+            print(err)
+        }
     }
     
     func dataToTopRated(urlString: String) {
@@ -113,12 +141,15 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == nowPlayingCollectionView {
-            return 3
+            return nowPlayingMovieDetails.count
         }
         if collectionView == upcomingCollectionView {
-            return 3
+            return upcomingMovieDetails.count
         }
-        return 3
+        if collectionView == topRatedCollectionView {
+            return topRatedMovieDetails.count
+        }
+        return mostPopularMovieDetails.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -151,11 +182,25 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
                 print(err)
             }
             return cell
-        } else {
+        } else if collectionView ==  topRatedCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topRated", for: indexPath)
             let movie = topRatedMovieDetails[indexPath.row]
             
             let posterImage = cell.viewWithTag(3) as! UIImageView
+            let urlImage = URL.init(string: movie["MoviePoster"] as! String)
+            do {
+                let data = try Data.init(contentsOf: urlImage!)
+                let image = UIImage.init(data: data)
+                posterImage.image = image
+            }catch let err {
+                print(err)
+            }
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mostPopular", for: indexPath)
+            let movie = mostPopularMovieDetails[indexPath.row]
+            
+            let posterImage = cell.viewWithTag(4) as! UIImageView
             let urlImage = URL.init(string: movie["MoviePoster"] as! String)
             do {
                 let data = try Data.init(contentsOf: urlImage!)
@@ -184,6 +229,11 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             destinationVC.title = "Top Rated"
             destinationVC.urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
         }
+        if segue.identifier == "mostPopularSeeAll" {
+            let destinationVC = segue.destination as! SeeAllViewController
+            destinationVC.title = "Most Popular"
+            destinationVC.urlString = "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+        }
         if segue.identifier == "nowPlayingDetails" {
             let destinationVC = segue.destination as! DetailsViewController
             let cell = sender as? UICollectionViewCell
@@ -205,6 +255,13 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let indexPath = self.topRatedCollectionView.indexPath(for: cell!)
             destinationVC.title = topRatedMovieDetails[indexPath!.row]["MovieTitle"] as? String
             destinationVC.detailArray = topRatedMovieDetails[indexPath!.row]
+        }
+        if segue.identifier == "mostPopularDetails" {
+            let destinationVC = segue.destination as! DetailsViewController
+            let cell = sender as? UICollectionViewCell
+            let indexPath = self.mostPopularCollectionView.indexPath(for: cell!)
+            destinationVC.title = mostPopularMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.detailArray = mostPopularMovieDetails[indexPath!.row]
         }
     }
 }

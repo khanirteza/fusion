@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -847,7 +847,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQ7-lp-k0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="2973"/>
+            <point key="canvasLocation" x="1167" y="2972"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Eac-37-AWl">
@@ -1013,6 +1013,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgK-aK-s58">
                                                 <rect key="frame" x="725" y="20" width="47" height="30"/>
                                                 <state key="normal" title="See All"/>
+                                                <connections>
+                                                    <segue destination="VMQ-J1-fZT" kind="show" identifier="mostPopularSeeAll" id="arg-eo-Mgr"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OnI-UE-2Gg" userLabel="Most Popular Collection View">
                                                 <rect key="frame" x="20" y="58" width="752" height="140"/>
@@ -1027,14 +1030,14 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="topRated" id="QMp-Af-VCA">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mostPopular" id="QMp-Af-VCA">
                                                         <rect key="frame" x="0.0" y="1" width="120" height="138"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="138"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ooB-2x-TXw">
+                                                                <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ooB-2x-TXw">
                                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="138"/>
                                                                 </imageView>
                                                             </subviews>
@@ -1046,8 +1049,15 @@
                                                             <constraint firstAttribute="bottom" secondItem="ooB-2x-TXw" secondAttribute="bottom" id="ltJ-DI-RkV"/>
                                                         </constraints>
                                                         <size key="customSize" width="120" height="138"/>
+                                                        <connections>
+                                                            <segue destination="dD7-tJ-FHf" kind="show" identifier="mostPopularDetails" id="V3l-tu-FHp"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="4O0-xp-xRu" id="bFI-Si-LYX"/>
+                                                    <outlet property="delegate" destination="4O0-xp-xRu" id="I7D-7r-obR"/>
+                                                </connections>
                                             </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1236,6 +1246,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Jg-rt-bZB"/>
                     <connections>
+                        <outlet property="mostPopularCollectionView" destination="OnI-UE-2Gg" id="mf3-tO-rET"/>
                         <outlet property="nowPlayingCollectionView" destination="tXj-4k-3in" id="WXq-xj-icD"/>
                         <outlet property="topRatedCollectionView" destination="EcA-2J-qXB" id="M1G-6l-RQR"/>
                         <outlet property="upcomingCollectionView" destination="qd1-dj-Kk1" id="pOf-75-zaA"/>
@@ -1293,7 +1304,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SC6-bB-3lq"/>
-        <segue reference="weI-9B-JUB"/>
-        <segue reference="ZJE-vM-E7S"/>
+        <segue reference="BOg-Ee-3Vd"/>
+        <segue reference="arg-eo-Mgr"/>
     </inferredMetricsTieBreakers>
 </document>
