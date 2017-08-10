@@ -11,7 +11,7 @@
 		46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */; };
 		46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */; };
 		9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF1661F3CAD020056911B /* MoviesModel.swift */; };
-		9E1DF1691F3CAEE60056911B /* Image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E1DF1681F3CAEE60056911B /* Image1.png */; };
+		9E1DF1691F3CAEE60056911B /* Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E1DF1681F3CAEE60056911B /* Image.png */; };
 		9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF16B1F3CBA8D0056911B /* TVModel.swift */; };
 		9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4C1F3944E90031260F /* SeeAllViewController.swift */; };
 		9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4E1F3A0A560031260F /* DetailsViewController.swift */; };
@@ -41,7 +41,7 @@
 		96C8003A3331F213E41C16BD /* Pods-Fusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.release.xcconfig"; sourceTree = "<group>"; };
 		9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fusion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1DF1661F3CAD020056911B /* MoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
-		9E1DF1681F3CAEE60056911B /* Image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Image1.png; path = ../../../../../Downloads/Image1.png; sourceTree = "<group>"; };
+		9E1DF1681F3CAEE60056911B /* Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Image.png; path = ../../../../../Downloads/Image.png; sourceTree = "<group>"; };
 		9E1DF16B1F3CBA8D0056911B /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
 		9E601C4C1F3944E90031260F /* SeeAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
 		9E601C4E1F3A0A560031260F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -141,12 +141,10 @@
 				F51149AF1F2BDCD40006268B /* FusionDatabase.xcdatamodeld */,
 				F55F32411F2B942E00B7AEB2 /* Assets.xcassets */,
 				F55F32461F2B942E00B7AEB2 /* Info.plist */,
-				9E1DF1681F3CAEE60056911B /* Image1.png */,
+				9E1DF1681F3CAEE60056911B /* Image.png */,
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
-				46AACDC61F3CACD9006C17EC /* TheatreDetailsViewController.swift */,
-				46AACDC81F3CB8EE006C17EC /* WebViewController.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -224,7 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E1DF1691F3CAEE60056911B /* Image1.png in Resources */,
+				9E1DF1691F3CAEE60056911B /* Image.png in Resources */,
 				F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */,
 				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
@@ -303,7 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55650151F2F73DE00350FD4 /* UserDataProvider.swift in Sources */,
-				46AACDC91F3CB8EE006C17EC /* WebViewController.swift in Sources */,
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
@@ -312,7 +309,6 @@
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */,
-				46AACDC71F3CACD9006C17EC /* TheatreDetailsViewController.swift in Sources */,
 				46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
