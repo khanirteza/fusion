@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -42,98 +42,106 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
     func dataToMostPopular(urlString: String) {
-        let url = URL.init(string: urlString)
-        let baseUrl = "http://image.tmdb.org/t/p/w780/"
-        do {
-            let data = try Data.init(contentsOf: url!)
-            let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
-            let results = response["results"] as! [[String:Any]]
+        Alamofire.request(urlString).responseJSON{
+            response in
+            
+            let baseURL = "http://image.tmdb.org/t/p/w780/"
+            
+            let json = response.result.value as! [String:Any]
+            let results = json["results"] as! [[String:Any]]
             for temp in results {
                 let id = temp["id"] as! Double
                 let voteAverage = temp["vote_average"] as! Double
                 let title = temp["title"] as! String
                 let poster = temp["poster_path"] as! String
-                let posterurl = baseUrl + poster
+                let posterurl = baseURL + poster
                 let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseUrl + backdrop
+                let backdropurl = baseURL + backdrop
                 let overview = temp["overview"] as! String
                 let releaseDate = temp["release_date"] as! String
-                mostPopularMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+                self.mostPopularMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
-        } catch let err {
-            print(err)
+            DispatchQueue.main.async {
+                self.mostPopularCollectionView.reloadData()
+            }
         }
     }
     
     func dataToTopRated(urlString: String) {
-        let url = URL.init(string: urlString)
-        let baseUrl = "http://image.tmdb.org/t/p/w780/"
-        do {
-            let data = try Data.init(contentsOf: url!)
-            let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
-            let results = response["results"] as! [[String:Any]]
+        Alamofire.request(urlString).responseJSON{
+            response in
+            
+            let baseURL = "http://image.tmdb.org/t/p/w780/"
+            
+            let json = response.result.value as! [String:Any]
+            let results = json["results"] as! [[String:Any]]
             for temp in results {
                 let id = temp["id"] as! Double
                 let voteAverage = temp["vote_average"] as! Double
                 let title = temp["title"] as! String
                 let poster = temp["poster_path"] as! String
-                let posterurl = baseUrl + poster
+                let posterurl = baseURL + poster
                 let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseUrl + backdrop
+                let backdropurl = baseURL + backdrop
                 let overview = temp["overview"] as! String
                 let releaseDate = temp["release_date"] as! String
-                topRatedMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+                self.topRatedMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
-        } catch let err {
-            print(err)
+            DispatchQueue.main.async {
+                self.topRatedCollectionView.reloadData()
+            }
         }
     }
     
     func dataToUpcoming(urlString: String) {
-        let url = URL.init(string: urlString)
-        let baseUrl = "http://image.tmdb.org/t/p/w780/"
-        do {
-            let data = try Data.init(contentsOf: url!)
-            let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
-            let results = response["results"] as! [[String:Any]]
+        Alamofire.request(urlString).responseJSON{
+            response in
+            
+            let baseURL = "http://image.tmdb.org/t/p/w780/"
+            
+            let json = response.result.value as! [String:Any]
+            let results = json["results"] as! [[String:Any]]
             for temp in results {
                 let id = temp["id"] as! Double
                 let voteAverage = temp["vote_average"] as! Double
                 let title = temp["title"] as! String
                 let poster = temp["poster_path"] as! String
-                let posterurl = baseUrl + poster
+                let posterurl = baseURL + poster
                 let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseUrl + backdrop
+                let backdropurl = baseURL + backdrop
                 let overview = temp["overview"] as! String
                 let releaseDate = temp["release_date"] as! String
-                upcomingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+                self.upcomingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
-        } catch let err {
-            print(err)
+            DispatchQueue.main.async {
+                self.upcomingCollectionView.reloadData()
+            }
         }
     }
     
     func dataToNowPlaying(urlString: String) {
-        let url = URL.init(string: urlString)
-        let baseUrl = "http://image.tmdb.org/t/p/w780/"
-        do {
-            let data = try Data.init(contentsOf: url!)
-            let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
-            let results = response["results"] as! [[String:Any]]
+        Alamofire.request(urlString).responseJSON{
+            response in
+            
+            let baseURL = "http://image.tmdb.org/t/p/w780/"
+            
+            let json = response.result.value as! [String:Any]
+            let results = json["results"] as! [[String:Any]]
             for temp in results {
                 let id = temp["id"] as! Double
                 let voteAverage = temp["vote_average"] as! Double
                 let title = temp["title"] as! String
                 let poster = temp["poster_path"] as! String
-                let posterurl = baseUrl + poster
+                let posterurl = baseURL + poster
                 let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseUrl + backdrop
+                let backdropurl = baseURL + backdrop
                 let overview = temp["overview"] as! String
                 let releaseDate = temp["release_date"] as! String
-                nowPlayingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+                self.nowPlayingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
-        } catch let err {
-            print(err)
+            DispatchQueue.main.async {
+                self.nowPlayingCollectionView.reloadData()
+            }
         }
     }
     
