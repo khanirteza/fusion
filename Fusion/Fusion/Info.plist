@@ -65,6 +65,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>request location</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Requried to select profile photo</string>
 </dict>
