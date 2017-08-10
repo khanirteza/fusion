@@ -11,6 +11,8 @@
 		46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */; };
 		46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */; };
 		46AACDC51F3BF83E006C17EC /* Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 46AACDC41F3BF83E006C17EC /* Image.png */; };
+		46AACDC71F3CACD9006C17EC /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC61F3CACD9006C17EC /* TheatreDetailsViewController.swift */; };
+		46AACDC91F3CB8EE006C17EC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC81F3CB8EE006C17EC /* WebViewController.swift */; };
 		9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4C1F3944E90031260F /* SeeAllViewController.swift */; };
 		9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4E1F3A0A560031260F /* DetailsViewController.swift */; };
 		C7C08D4FE180AC8BE65C5AB8 /* Pods_Fusion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */; };
@@ -37,6 +39,8 @@
 		46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetails.swift; sourceTree = "<group>"; };
 		46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		46AACDC41F3BF83E006C17EC /* Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Image.png; path = ../../../iOS/MapKitTest/MapKitTest/Image.png; sourceTree = "<group>"; };
+		46AACDC61F3CACD9006C17EC /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
+		46AACDC81F3CB8EE006C17EC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		96C8003A3331F213E41C16BD /* Pods-Fusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.release.xcconfig"; sourceTree = "<group>"; };
 		9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fusion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E601C4C1F3944E90031260F /* SeeAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
+				46AACDC61F3CACD9006C17EC /* TheatreDetailsViewController.swift */,
+				46AACDC81F3CB8EE006C17EC /* WebViewController.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -287,12 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55650151F2F73DE00350FD4 /* UserDataProvider.swift in Sources */,
+				46AACDC91F3CB8EE006C17EC /* WebViewController.swift in Sources */,
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */,
+				46AACDC71F3CACD9006C17EC /* TheatreDetailsViewController.swift in Sources */,
 				46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,

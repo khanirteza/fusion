@@ -19,8 +19,10 @@ class AnnotationDetails: NSObject, MKAnnotation {
     var city : String?
     var state: String?
     var phone : String?
+    var url : String?
+    var averageRating : String?
     
-    init(coordinates: CLLocationCoordinate2D, title: String, address:String, city:String,state:String,phone:String){
+    init(coordinates: CLLocationCoordinate2D, title: String, address:String, city:String,state:String,phone:String,url: String,averageRating:String){
         self.coordinate = coordinates
         self.title = title
         self.subtitle = address
@@ -28,6 +30,8 @@ class AnnotationDetails: NSObject, MKAnnotation {
         self.city = city
         self.state = state
         self.phone = phone
+        self.url = url
+        self.averageRating = averageRating
         
         super.init()
     }

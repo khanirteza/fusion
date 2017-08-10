@@ -62,8 +62,13 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
 
                 let latitude = theatre["Latitude"] as! String
                 let longitude = theatre["Longitude"] as! String
-
-                theatreDetails.append(["Title":title,"Address":address,"City":city,"State":state,"Phone":phone,"Latitude":latitude,"Longitude":longitude])
+                
+                let url = theatre["Url"] as! String
+                
+                let rating = theatre["Rating"] as! [String: Any]
+                let averageRating = rating["AverageRating"] as! String
+                
+                theatreDetails.append(["Title":title,"Address":address,"City":city,"State":state,"Phone":phone,"Latitude":latitude,"Longitude":longitude,"Url":url,"AverageRating":averageRating])
             }
 
         }catch let error{
@@ -91,7 +96,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
             self.mapView.setRegion(region, animated: true)
             
             let annotation = AnnotationDetails(coordinates: coordinates,title: theatre["Title"]!,
-                                               address: theatre["Address"]!, city: theatre["City"]!, state: theatre["State"]!, phone: theatre["Phone"]!)
+                                               address: theatre["Address"]!, city: theatre["City"]!, state: theatre["State"]!, phone: theatre["Phone"]!, url: theatre["Url"]!,averageRating:theatre["AverageRating"]!)
             
             mapView.addAnnotation(annotation)
             
@@ -103,7 +108,27 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
         return pin
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegue(withIdentifier: "theatreDetailsSegue", sender: view)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "theatreDetailsSegue" {
+            let dest = segue.destination as! TheatreDetailsViewController
+            let view = sender as! CustomAnnotationView
+            let annotation = view.annotation as! AnnotationDetails
+            
+            dest.title = annotation.title!
+            dest.address = annotation.address!
+            dest.city = annotation.city!
+            dest.state = annotation.state!
+            dest.phone = annotation.phone!
+            dest.url = annotation.url!
+            dest.averageRating = annotation.averageRating!
+            
+        }
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
