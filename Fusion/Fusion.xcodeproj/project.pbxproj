@@ -145,6 +145,8 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
+				46AACDC61F3CACD9006C17EC /* TheatreDetailsViewController.swift */,
+				46AACDC81F3CB8EE006C17EC /* WebViewController.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -301,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55650151F2F73DE00350FD4 /* UserDataProvider.swift in Sources */,
+				46AACDC91F3CB8EE006C17EC /* WebViewController.swift in Sources */,
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
@@ -309,6 +312,7 @@
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */,
+				46AACDC71F3CACD9006C17EC /* TheatreDetailsViewController.swift in Sources */,
 				46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
