@@ -14,7 +14,7 @@ class CustomAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
-        self.image = UIImage(named: "Image.png")
+        self.image = UIImage(named: "pin")
         
         self.canShowCallout = true
         //detailCalloutAccessoryView = UIView()
