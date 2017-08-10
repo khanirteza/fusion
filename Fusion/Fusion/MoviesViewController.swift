@@ -26,126 +26,38 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nowPlayingUrlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToNowPlaying(urlString: nowPlayingUrlString)
+        let modal = MoviesModel.init()
         
-        let upComingUrlString = "https://api.themoviedb.org/3/movie/upcoming?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToUpcoming(urlString: upComingUrlString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            nowPlayingDetails in
+            
+            self.nowPlayingMovieDetails.append(contentsOf: nowPlayingDetails)
+            self.nowPlayingCollectionView?.reloadData()
+        }
         
-        let topRatedUrlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToTopRated(urlString: topRatedUrlString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/upcoming?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            upcomingDetails in
+            
+            self.upcomingMovieDetails.append(contentsOf: upcomingDetails)
+            self.upcomingCollectionView.reloadData()
+        }
         
-        let mostPopularString = "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToMostPopular(urlString: mostPopularString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            topRatedDetails in
+            
+            self.topRatedMovieDetails.append(contentsOf: topRatedDetails)
+            self.topRatedCollectionView?.reloadData()
+        }
+        
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            mostPopularDetails in
+            
+            self.mostPopularMovieDetails.append(contentsOf: mostPopularDetails)
+            self.mostPopularCollectionView?.reloadData()
+        }
         
         userPhotoImageView.image = UserDataProvider.getUserPhoto()
-        
     }
-    func dataToMostPopular(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["title"] as! String
-                let poster = temp["poster_path"] as! String
-                let posterurl = baseURL + poster
-                let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseURL + backdrop
-                let overview = temp["overview"] as! String
-                let releaseDate = temp["release_date"] as! String
-                self.mostPopularMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
-            }
-            DispatchQueue.main.async {
-                self.mostPopularCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToTopRated(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["title"] as! String
-                let poster = temp["poster_path"] as! String
-                let posterurl = baseURL + poster
-                let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseURL + backdrop
-                let overview = temp["overview"] as! String
-                let releaseDate = temp["release_date"] as! String
-                self.topRatedMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
-            }
-            DispatchQueue.main.async {
-                self.topRatedCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToUpcoming(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["title"] as! String
-                let poster = temp["poster_path"] as! String
-                let posterurl = baseURL + poster
-                let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseURL + backdrop
-                let overview = temp["overview"] as! String
-                let releaseDate = temp["release_date"] as! String
-                self.upcomingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
-            }
-            DispatchQueue.main.async {
-                self.upcomingCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToNowPlaying(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["title"] as! String
-                let poster = temp["poster_path"] as! String
-                let posterurl = baseURL + poster
-                let backdrop = temp["backdrop_path"] as! String
-                let backdropurl = baseURL + backdrop
-                let overview = temp["overview"] as! String
-                let releaseDate = temp["release_date"] as! String
-                self.nowPlayingMovieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
-            }
-            DispatchQueue.main.async {
-                self.nowPlayingCollectionView.reloadData()
-            }
-        }
-    }
-    
-    
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == nowPlayingCollectionView {

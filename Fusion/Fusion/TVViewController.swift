@@ -26,123 +26,37 @@ class TVViewController: UIViewController, UICollectionViewDelegate, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let onTheAirUrlString = "https://api.themoviedb.org/3/tv/on_the_air?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToOnTheAir(urlString: onTheAirUrlString)
+        let modal = TVModel.init()
         
-        let willBeOnAirUrlString = "https://api.themoviedb.org/3/tv/airing_today?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToWillBeOnAir(urlString: willBeOnAirUrlString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/on_the_air?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            onTheAirDetails in
+            
+            self.OnTheAirShowDetails.append(contentsOf: onTheAirDetails)
+            self.onTheAirCollectionView?.reloadData()
+        }
         
-        let topRatedUrlString = "https://api.themoviedb.org/3/tv/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToTopRated(urlString: topRatedUrlString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/airing_today?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            willOnTheAirDetails in
+            
+            self.WillBeOnAirShowDetails.append(contentsOf: willOnTheAirDetails)
+            self.willBeOnAirCollectionView.reloadData()
+        }
         
-        let mostPopularUrlString = "https://api.themoviedb.org/3/tv/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
-        dataToMostPopular(urlString: mostPopularUrlString)
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            topRatedDetails in
+            
+            self.TopRatedShowDetails.append(contentsOf: topRatedDetails)
+            self.topRatedCollectionView?.reloadData()
+        }
+        
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+            mostPopularDetails in
+            
+            self.MostPopularShowDetails.append(contentsOf: mostPopularDetails)
+            self.mostPopularCollectionView?.reloadData()
+        }
         
         userPhotoImageView.image = UserDataProvider.getUserPhoto()
-    }
-    
-    func dataToMostPopular(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["name"] as! String
-                let poster = temp["poster_path"]!
-                let posterurl = "\(baseURL)" + "\(poster)"
-                let backdrop = temp["backdrop_path"]!
-                let backdropurl = "\(baseURL)" + "\(backdrop)"
-                let overview = temp["overview"] as! String
-                let firstAirDate = temp["first_air_date"] as! String
-                self.MostPopularShowDetails.append(["ShowTitle":title, "ShowID":id, "Rating":voteAverage, "ShowPoster": posterurl, "BackdropPoster": backdropurl,  "Overview":overview, "FirstAired":firstAirDate])
-            }
-            DispatchQueue.main.async {
-                self.mostPopularCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToTopRated(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["name"] as! String
-                let poster = temp["poster_path"]!
-                let posterurl = "\(baseURL)" + "\(poster)"
-                let backdrop = temp["backdrop_path"]!
-                let backdropurl = "\(baseURL)" + "\(backdrop)"
-                let overview = temp["overview"] as! String
-                let firstAirDate = temp["first_air_date"] as! String
-                self.TopRatedShowDetails.append(["ShowTitle":title, "ShowID":id, "Rating":voteAverage, "ShowPoster": posterurl, "BackdropPoster": backdropurl,  "Overview":overview, "FirstAired":firstAirDate])
-            }
-            DispatchQueue.main.async {
-                self.topRatedCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToWillBeOnAir(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["name"] as! String
-                let poster = temp["poster_path"]!
-                let posterurl = "\(baseURL)" + "\(poster)"
-                let backdrop = temp["backdrop_path"]!
-                let backdropurl = "\(baseURL)" + "\(backdrop)"
-                let overview = temp["overview"] as! String
-                let firstAirDate = temp["first_air_date"] as! String
-                self.WillBeOnAirShowDetails.append(["ShowTitle":title, "ShowID":id, "Rating":voteAverage, "ShowPoster": posterurl, "BackdropPoster": backdropurl,  "Overview":overview, "FirstAired":firstAirDate])
-            }
-            DispatchQueue.main.async {
-                self.willBeOnAirCollectionView.reloadData()
-            }
-        }
-    }
-    
-    func dataToOnTheAir(urlString: String) {
-        Alamofire.request(urlString).responseJSON{
-            response in
-            
-            let baseURL = "http://image.tmdb.org/t/p/w780/"
-            
-            let json = response.result.value as! [String:Any]
-            let results = json["results"] as! [[String:Any]]
-            for temp in results {
-                let id = temp["id"] as! Double
-                let voteAverage = temp["vote_average"] as! Double
-                let title = temp["name"] as! String
-                let poster = temp["poster_path"]!
-                let posterurl = "\(baseURL)" + "\(poster)"
-                let backdrop = temp["backdrop_path"]!
-                let backdropurl = "\(baseURL)" + "\(backdrop)"
-                let overview = temp["overview"] as! String
-                let firstAirDate = temp["first_air_date"] as! String
-                self.OnTheAirShowDetails.append(["ShowTitle":title, "ShowID":id, "Rating":voteAverage, "ShowPoster": posterurl, "BackdropPoster": backdropurl,  "Overview":overview, "FirstAired":firstAirDate])
-            }
-            DispatchQueue.main.async {
-                self.onTheAirCollectionView.reloadData()
-            }
-        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
