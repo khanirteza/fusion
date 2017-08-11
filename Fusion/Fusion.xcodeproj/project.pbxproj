@@ -64,6 +64,7 @@
 		F5756DEC1F2EC3F20037834B /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
 		F5AD0CAB1F3D728D0026B184 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
+		F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
 		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +150,7 @@
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
 				F519ECD01F3CCD6C006E65EC /* WebViewController.swift */,
+				F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
