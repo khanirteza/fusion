@@ -29,13 +29,13 @@ class TheatreDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addressLabel.text = address
-        cityLabel.text = city
-        stateLabel.text = state
-        phoneLabel.text = phone
-        urlButton.setTitle(url, for: .normal)
-        ratingsLabel.text = averageRating
-        // Do any additional setup after loading the view.
+//        addressLabel.text = address
+//        cityLabel.text = city
+//        stateLabel.text = state
+//        phoneLabel.text = phone
+//        urlButton.setTitle(url, for: .normal)
+//        ratingsLabel.text = averageRating
+//        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,13 +44,13 @@ class TheatreDetailsViewController: UIViewController {
     }
     
 
-    @IBAction func showUrl(_ sender: Any) {
-        
-    }
-    
+//    @IBAction func showUrl(_ sender: Any) {
+//        
+//    }
+//    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC = segue.destination as! WebViewController
-        let view = sender as! UIButton
-        destVC.urlString = view.title(for: .normal)
+//        let destVC = segue.destination as! WebViewController
+//        let view = sender as! UIButton
+//        destVC.urlString = view.title(for: .normal)
     }
 }

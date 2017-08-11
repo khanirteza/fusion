@@ -9,13 +9,16 @@
 import UIKit
 
 import MapKit
+import CoreData
+import CoreLocation
 
-class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
+class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     var theatreDetails = [[String:String]]()
-    
+    var zipCode = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,9 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
         mapView.showsPointsOfInterest = true
         mapView.showsScale = true
         mapView.showsUserLocation = true
+        locationManager.delegate = self
         
         
-        fetchTheatreLocations()
         
         
     }
@@ -34,24 +37,30 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
     func fetchTheatreLocations(){
         
         print(zipCode)
+        
         let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%27\(zipCode)%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
-//        //        let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%2720770%27%20and%20query%3D%27movie_theatre%27&format=json&diagnostics=true&callback="
-        //        print(zipCode)
-        let url = URL(string: urlString)
-
+//
+        
+        //                let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%2760070%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
+//        //        print(zipCode)
+        
+        let url = URL(string: urlString)!
+        print(zipCode)
+        print(url)
         do{
-            let data = try Data.init(contentsOf: url!)
+            let data = try Data.init(contentsOf: url)
 
             //parsing the data
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String : Any]
 
-           // print(json)
+            print(json)
             let query = json["query"] as! [String : Any]
-
+            print(query)
+            
             let results = query["results"] as! [String : Any]
             let result = results["Result"] as! [[String : Any]]
             for theatre in result{
-
+                
                 let title = theatre["Title"] as! String
                 let address = theatre["Address"] as! String
                 let city = theatre["City"] as! String
@@ -59,7 +68,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
                 let phone = theatre["Phone"] as! String
                 print(phone)
                 //let phone = "7732172181"
-
+                
                 let latitude = theatre["Latitude"] as! String
                 let longitude = theatre["Longitude"] as! String
                 
@@ -70,7 +79,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
                 
                 theatreDetails.append(["Title":title,"Address":address,"City":city,"State":state,"Phone":phone,"Latitude":latitude,"Longitude":longitude,"Url":url,"AverageRating":averageRating])
             }
-
+            
         }catch let error{
             print(error)
         }
@@ -86,7 +95,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
             
             let coordinates = CLLocationCoordinate2D.init(latitude: CLLocationDegrees(latitude!)!, longitude: CLLocationDegrees(longitude!)!)
             
-            let span = MKCoordinateSpanMake(0.2, 0.2)
+            let span = MKCoordinateSpanMake(0.1, 0.1)
             
             let theatreLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(latitude!)!, CLLocationDegrees(longitude!)!)
             
@@ -109,26 +118,46 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        performSegue(withIdentifier: "theatreDetailsSegue", sender: view)
+        performSegue(withIdentifier: "ShowTheaterDetailSegue", sender: view)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "theatreDetailsSegue" {
-            let dest = segue.destination as! TheatreDetailsViewController
-            let view = sender as! CustomAnnotationView
-            let annotation = view.annotation as! AnnotationDetails
-            
-            dest.title = annotation.title!
-            dest.address = annotation.address!
-            dest.city = annotation.city!
-            dest.state = annotation.state!
-            dest.phone = annotation.phone!
-            dest.url = annotation.url!
-            dest.averageRating = annotation.averageRating!
-            
+        if segue.identifier == "ShowTheaterDetailSegue" {
+//            let dest = segue.destination as! TheatreDetailsViewController
+//            let view = sender as! CustomAnnotationView
+//            let annotation = view.annotation as! AnnotationDetails
+//            
+//            dest.title = annotation.title!
+//            dest.address = annotation.address!
+//            dest.city = annotation.city!
+//            dest.state = annotation.state!
+//            dest.phone = annotation.phone!
+//            dest.url = annotation.url!
+//            dest.averageRating = annotation.averageRating!
+//            
         }
         
     }
+    
+    @IBAction func currentLocation(_ sender: UIButton) {
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        
+        
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
+        CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: {(placemark, error) -> Void in
+            if error == nil && placemark!.count > 0{
+                print(placemark![0].postalCode!)
+                self.zipCode = placemark![0].postalCode!
+                self.fetchTheatreLocations()
+                
+            }
+        })
+    }
+    
     
 
     override func didReceiveMemoryWarning() {

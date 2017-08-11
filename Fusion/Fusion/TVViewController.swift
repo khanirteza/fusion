@@ -28,28 +28,28 @@ class TVViewController: UIViewController, UICollectionViewDelegate, UICollection
         
         let modal = TVModel.init()
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/on_the_air?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/on_the_air?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             onTheAirDetails in
             
             self.OnTheAirShowDetails.append(contentsOf: onTheAirDetails)
             self.onTheAirCollectionView?.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/airing_today?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/airing_today?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             willOnTheAirDetails in
             
             self.WillBeOnAirShowDetails.append(contentsOf: willOnTheAirDetails)
             self.willBeOnAirCollectionView.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/top_rated?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             topRatedDetails in
             
             self.TopRatedShowDetails.append(contentsOf: topRatedDetails)
             self.topRatedCollectionView?.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/tv/popular?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             mostPopularDetails in
             
             self.MostPopularShowDetails.append(contentsOf: mostPopularDetails)
