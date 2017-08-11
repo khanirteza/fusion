@@ -121,18 +121,18 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowTheaterDetailSegue" {
-            let dest = segue.destination as! TheatreDetailsViewController
-            let view = sender as! CustomAnnotationView
-            let annotation = view.annotation as! AnnotationDetails
-            
-            dest.title = annotation.title!
-            dest.address = annotation.address!
-            dest.city = annotation.city!
-            dest.state = annotation.state!
-            dest.phone = annotation.phone!
-            dest.url = annotation.url!
-            dest.averageRating = annotation.averageRating!
-            
+//            let dest = segue.destination as! TheatreDetailsViewController
+//            let view = sender as! CustomAnnotationView
+//            let annotation = view.annotation as! AnnotationDetails
+//            
+//            dest.title = annotation.title!
+//            dest.address = annotation.address!
+//            dest.city = annotation.city!
+//            dest.state = annotation.state!
+//            dest.phone = annotation.phone!
+//            dest.url = annotation.url!
+//            dest.averageRating = annotation.averageRating!
+//            
         }
         
     }
