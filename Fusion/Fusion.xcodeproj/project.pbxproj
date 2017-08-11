@@ -31,6 +31,7 @@
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
 		F5A348C01F3E40E1008BDF7E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A348BF1F3E40E1008BDF7E /* WebViewController.swift */; };
+		F5A348C11F3E6803008BDF7E /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A348BC1F3E3172008BDF7E /* APIKey.plist */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
@@ -240,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A348C11F3E6803008BDF7E /* APIKey.plist in Resources */,
 				F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */,
 				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
