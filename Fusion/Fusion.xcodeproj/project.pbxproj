@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		462FFE881F3E22110052A496 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462FFE871F3E22110052A496 /* APIKey.plist */; };
 		46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */; };
 		46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */; };
 		46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */; };
@@ -37,7 +36,6 @@
 
 /* Begin PBXFileReference section */
 		43C883C88A0204B070493FFE /* Pods-Fusion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.debug.xcconfig"; sourceTree = "<group>"; };
-		462FFE871F3E22110052A496 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNearbyTheatresViewController.swift; sourceTree = "<group>"; };
 		46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetails.swift; sourceTree = "<group>"; };
 		46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
@@ -83,14 +81,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		462FFE861F3E20850052A496 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				F5ADF2461F3E153500192575 /* APIKey.plist */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		9E1DF16A1F3CBA6F0056911B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +114,6 @@
 				F55F32351F2B942E00B7AEB2 /* Products */,
 				CC39B3404C90E8132414E8D3 /* Pods */,
 				B346435DA847D40EEAC4284D /* Frameworks */,
-
 				F581D96B1F3E2BC800CB9A29 /* Recovered References */,
 			);
 			sourceTree = "<group>";
@@ -161,10 +150,8 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
-
 				F5A348BA1F3E2CC7008BDF7E /* WebViewController.swift */,
 				F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */,
-
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -176,9 +163,7 @@
 				F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */,
 				F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */,
 				F5756DE61F2EB4570037834B /* Extensions.swift */,
-
 				F5A348BC1F3E3172008BDF7E /* APIKey.plist */,
-
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -488,7 +473,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 42VD55UR5N;
 				INFOPLIST_FILE = Fusion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.irteza.Fusion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -505,7 +492,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 42VD55UR5N;
 				INFOPLIST_FILE = Fusion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.irteza.Fusion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
