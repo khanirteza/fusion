@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import CoreData
 
-var zipCode = ""
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var userPhotoImageView: UIImageView!
