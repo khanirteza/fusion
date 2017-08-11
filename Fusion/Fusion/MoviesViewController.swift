@@ -79,7 +79,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let movie = nowPlayingMovieDetails[indexPath.row]
             
             let posterImage = cell.viewWithTag(1) as! UIImageView
-            let urlImage = URL.init(string: movie["MoviePoster"] as! String)
+            let urlImage = URL.init(string: movie["Poster"] as! String)
             do {
                 let data = try Data.init(contentsOf: urlImage!)
                 let image = UIImage.init(data: data)
@@ -93,7 +93,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let movie = upcomingMovieDetails[indexPath.row]
             
             let posterImage = cell.viewWithTag(2) as! UIImageView
-            let urlImage = URL.init(string: movie["MoviePoster"] as! String)
+            let urlImage = URL.init(string: movie["Poster"] as! String)
             do {
                 let data = try Data.init(contentsOf: urlImage!)
                 let image = UIImage.init(data: data)
@@ -107,7 +107,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let movie = topRatedMovieDetails[indexPath.row]
             
             let posterImage = cell.viewWithTag(3) as! UIImageView
-            let urlImage = URL.init(string: movie["MoviePoster"] as! String)
+            let urlImage = URL.init(string: movie["Poster"] as! String)
             do {
                 let data = try Data.init(contentsOf: urlImage!)
                 let image = UIImage.init(data: data)
@@ -121,7 +121,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let movie = mostPopularMovieDetails[indexPath.row]
             
             let posterImage = cell.viewWithTag(4) as! UIImageView
-            let urlImage = URL.init(string: movie["MoviePoster"] as! String)
+            let urlImage = URL.init(string: movie["Poster"] as! String)
             do {
                 let data = try Data.init(contentsOf: urlImage!)
                 let image = UIImage.init(data: data)
@@ -137,6 +137,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         if segue.identifier == "nowPlayingSeeAll" {
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Now Playing"
+            destinationVC.y = true
             destinationVC.urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
         }
         if segue.identifier == "upcomingSeeAll" {
@@ -159,28 +160,31 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             let cell = sender as? UICollectionViewCell
             let indexPath = self.nowPlayingCollectionView.indexPath(for: cell!)
             
-            destinationVC.title = nowPlayingMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.title = nowPlayingMovieDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = nowPlayingMovieDetails[indexPath!.row]
         }
         if segue.identifier == "upcomingDetails" {
             let destinationVC = segue.destination as! DetailsViewController
             let cell = sender as? UICollectionViewCell
             let indexPath = self.upcomingCollectionView.indexPath(for: cell!)
-            destinationVC.title = upcomingMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.x = false
+            destinationVC.title = upcomingMovieDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = upcomingMovieDetails[indexPath!.row]
         }
         if segue.identifier == "topRatedDetails" {
             let destinationVC = segue.destination as! DetailsViewController
             let cell = sender as? UICollectionViewCell
             let indexPath = self.topRatedCollectionView.indexPath(for: cell!)
-            destinationVC.title = topRatedMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.x = false
+            destinationVC.title = topRatedMovieDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = topRatedMovieDetails[indexPath!.row]
         }
         if segue.identifier == "mostPopularDetails" {
             let destinationVC = segue.destination as! DetailsViewController
             let cell = sender as? UICollectionViewCell
             let indexPath = self.mostPopularCollectionView.indexPath(for: cell!)
-            destinationVC.title = mostPopularMovieDetails[indexPath!.row]["MovieTitle"] as? String
+            destinationVC.x = false
+            destinationVC.title = mostPopularMovieDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = mostPopularMovieDetails[indexPath!.row]
         }
     }
