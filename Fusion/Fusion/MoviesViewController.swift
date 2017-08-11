@@ -28,28 +28,28 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let modal = MoviesModel.init()
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/now_playing?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             nowPlayingDetails in
             
             self.nowPlayingMovieDetails.append(contentsOf: nowPlayingDetails)
             self.nowPlayingCollectionView?.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/upcoming?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/upcoming?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             upcomingDetails in
             
             self.upcomingMovieDetails.append(contentsOf: upcomingDetails)
             self.upcomingCollectionView.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/top_rated?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             topRatedDetails in
             
             self.topRatedMovieDetails.append(contentsOf: topRatedDetails)
             self.topRatedCollectionView?.reloadData()
         }
         
-        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1") {
+        modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/popular?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
             mostPopularDetails in
             
             self.mostPopularMovieDetails.append(contentsOf: mostPopularDetails)
@@ -137,22 +137,22 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         if segue.identifier == "nowPlayingSeeAll" {
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Now Playing"
-            destinationVC.urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+            destinationVC.urlString = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1"
         }
         if segue.identifier == "upcomingSeeAll" {
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Upcoming"
-            destinationVC.urlString = "https://api.themoviedb.org/3/movie/upcoming?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+            destinationVC.urlString = "https://api.themoviedb.org/3/movie/upcoming?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1"
         }
         if segue.identifier == "topRatedSeeAll" {
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Top Rated"
-            destinationVC.urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+            destinationVC.urlString = "https://api.themoviedb.org/3/movie/top_rated?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1"
         }
         if segue.identifier == "mostPopularSeeAll" {
             let destinationVC = segue.destination as! SeeAllViewController
             destinationVC.title = "Most Popular"
-            destinationVC.urlString = "https://api.themoviedb.org/3/movie/popular?api_key=38c202b89452edcd18696b9e9962f08a&language=en-US&page=1"
+            destinationVC.urlString = "https://api.themoviedb.org/3/movie/popular?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1"
         }
         if segue.identifier == "nowPlayingDetails" {
             let destinationVC = segue.destination as! DetailsViewController

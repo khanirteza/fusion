@@ -30,6 +30,7 @@
 		F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DE81F2EC3DC0037834B /* HomeViewController.swift */; };
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
+		F5A348BD1F3E3173008BDF7E /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A348BC1F3E3172008BDF7E /* APIKey.plist */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
@@ -62,8 +63,10 @@
 		F5756DE81F2EC3DC0037834B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		F5756DEC1F2EC3F20037834B /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
+		F5A348BA1F3E2CC7008BDF7E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
+		F5A348BC1F3E3172008BDF7E /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
-		F5ADF2461F3E153500192575 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +124,8 @@
 				F55F32351F2B942E00B7AEB2 /* Products */,
 				CC39B3404C90E8132414E8D3 /* Pods */,
 				B346435DA847D40EEAC4284D /* Frameworks */,
-				462FFE861F3E20850052A496 /* Recovered References */,
+
+				F581D96B1F3E2BC800CB9A29 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +161,10 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
+
+				F5A348BA1F3E2CC7008BDF7E /* WebViewController.swift */,
+				F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */,
+
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -168,9 +176,18 @@
 				F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */,
 				F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */,
 				F5756DE61F2EB4570037834B /* Extensions.swift */,
-				462FFE871F3E22110052A496 /* APIKey.plist */,
+
+				F5A348BC1F3E3172008BDF7E /* APIKey.plist */,
+
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F581D96B1F3E2BC800CB9A29 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +252,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A348BD1F3E3173008BDF7E /* APIKey.plist in Resources */,
 				F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */,
 				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
-				462FFE881F3E22110052A496 /* APIKey.plist in Resources */,
 				F55F323D1F2B942E00B7AEB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
