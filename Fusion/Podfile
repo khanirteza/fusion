@@ -8,5 +8,6 @@ target 'Fusion' do
   # Pods for Fusion
   pod 'Google/SignIn'
   pod 'SwiftKeychainWrapper','~>3.0.1'
+  pod 'Alamofire', '~> 4.4'
 
 end
