@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fusion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWC-v9-XrN">
-                                <rect key="frame" x="145.33333333333331" y="28" width="125.33333333333331" height="48"/>
+                                <rect key="frame" x="144.66666666666663" y="28" width="125.33333333333337" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CK3-r7-woL"/>
                                 </constraints>

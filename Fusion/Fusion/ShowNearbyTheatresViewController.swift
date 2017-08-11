@@ -18,7 +18,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
     let locationManager = CLLocationManager()
     
     var theatreDetails = [[String:String]]()
-    
+    var zipCode = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,6 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         locationManager.delegate = self
         
         
-        fetchTheatreLocations()
         
         
     }
@@ -38,15 +37,18 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
     func fetchTheatreLocations(){
         
         print(zipCode)
-//        let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%27\(zipCode)%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
-//
-                let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%2760070%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
-        //        print(zipCode)
-        let url = URL(string: urlString)
         
-        print(url!)
+        let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%27\(zipCode)%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
+//
+        
+        //                let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%2760070%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
+//        //        print(zipCode)
+        
+        let url = URL(string: urlString)!
+        print(zipCode)
+        print(url)
         do{
-            let data = try Data.init(contentsOf: url!)
+            let data = try Data.init(contentsOf: url)
 
             //parsing the data
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String : Any]
@@ -93,7 +95,7 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
             
             let coordinates = CLLocationCoordinate2D.init(latitude: CLLocationDegrees(latitude!)!, longitude: CLLocationDegrees(longitude!)!)
             
-            let span = MKCoordinateSpanMake(0.2, 0.2)
+            let span = MKCoordinateSpanMake(0.1, 0.1)
             
             let theatreLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(CLLocationDegrees(latitude!)!, CLLocationDegrees(longitude!)!)
             
@@ -142,12 +144,15 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         locationManager.startUpdatingLocation()
         
         
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.stopUpdatingLocation()
         CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: {(placemark, error) -> Void in
             if error == nil && placemark!.count > 0{
                 print(placemark![0].postalCode!)
-                zipCode = placemark![0].postalCode!
+                self.zipCode = placemark![0].postalCode!
+                self.fetchTheatreLocations()
                 
             }
         })
