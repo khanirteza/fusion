@@ -12,9 +12,11 @@ import MapKit
 import CoreData
 import CoreLocation
 
-class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBOutlet weak var tableView: UITableView!
     let locationManager = CLLocationManager()
     
     var theatreDetails = [[String:String]]()
@@ -29,13 +31,19 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         locationManager.delegate = self
         
         
+        guard let userZip = UserDataProvider.getUserZipCode() else{
+            requestAuthorization()
+            return
+        }
+        zipCode = userZip
+        fetchTheatreLocations()
         
         
     }
     
     
     func fetchTheatreLocations(){
-        
+        theatreDetails.removeAll()
         print(zipCode)
         
         let urlString = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20local.search%20where%20zip%3D%27\(zipCode)%27%20and%20query%3D%27movie_theatre%27&format=json&callback="
@@ -47,12 +55,13 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         let url = URL(string: urlString)!
         print(zipCode)
         print(url)
+        
         do{
             let data = try Data.init(contentsOf: url)
-
+            
             //parsing the data
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String : Any]
-
+            
             print(json)
             let query = json["query"] as! [String : Any]
             print(query)
@@ -83,9 +92,12 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         }catch let error{
             print(error)
         }
-
+        
         showLocations()
+        tableView.reloadData()
+        
     }
+    
     
     func showLocations(){
         for i in 0..<theatreDetails.count{
@@ -113,6 +125,9 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }
         let pin = CustomAnnotationView(annotation: annotation, reuseIdentifier: "pin1")
         return pin
     }
@@ -139,9 +154,15 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
         
     }
     
-    @IBAction func currentLocation(_ sender: UIButton) {
+    func requestAuthorization()
+    {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+    }
+    @IBAction func currentLocation(_ sender: UIButton) {
+        
+       requestAuthorization()
         
         
         
@@ -159,7 +180,21 @@ class ShowNearbyTheatresViewController: UIViewController, MKMapViewDelegate, CLL
     }
     
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return theatreDetails.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "theatreTableViewCell", for: indexPath)
+        
+        let theatre = theatreDetails[indexPath.row]
+        
+        cell.textLabel?.text = theatre["Title"]
+        cell.detailTextLabel?.text = theatre["Address"]
+        
+        return cell
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
