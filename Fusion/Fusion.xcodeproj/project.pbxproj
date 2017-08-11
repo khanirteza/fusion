@@ -31,6 +31,8 @@
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
 		F5AD0CAC1F3D728E0026B184 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5AD0CAB1F3D728D0026B184 /* APIKey.plist */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
+		F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */; };
+		F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519ECD01F3CCD6C006E65EC /* WebViewController.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -311,6 +313,7 @@
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
+				F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */,
 				9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
@@ -322,6 +325,7 @@
 				F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */,
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 				F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */,
+				F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */,
 				F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */,
 				F5756DE71F2EB4570037834B /* Extensions.swift in Sources */,
 				9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */,
