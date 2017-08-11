@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         userPhotoImageView.image = UserDataProvider.getUserPhoto()
-        
+        print(MiscDataProvider.TMDB_API_Key)
     }
     
     
