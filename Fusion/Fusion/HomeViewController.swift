@@ -9,36 +9,22 @@
 import UIKit
 import SwiftKeychainWrapper
 import CoreData
-import CoreLocation
+
 var zipCode = ""
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var userPhotoImageView: UIImageView!
     
-    var locationManager = CLLocationManager()
     
     //let logNotification = "loggedInUser"
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         // Do any additional setup after loading the view.
         userPhotoImageView.image = UserDataProvider.getUserPhoto()
         
     }
     
-    //get the zip code
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        CLGeocoder().reverseGeocodeLocation(locations.last!, completionHandler: {(placemark, error) -> Void in
-            if error == nil && placemark!.count > 0{
-                print(placemark![0].postalCode!)
-                zipCode = placemark![0].postalCode!
-                
-            }
-        })
-    }
     
     
     /*

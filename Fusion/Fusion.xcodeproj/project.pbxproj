@@ -33,6 +33,9 @@
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
+		F5ADF2471F3E153500192575 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ADF2461F3E153500192575 /* APIKey.plist */; };
+		F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */; };
+		F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519ECD01F3CCD6C006E65EC /* WebViewController.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,7 @@
 		F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		F5756DEC1F2EC3F20037834B /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
+		F5ADF2461F3E153500192575 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
 		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
 				46AACDD21F3E0B4F006C17EC /* APIKey.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
+				F5ADF2471F3E153500192575 /* APIKey.plist in Resources */,
 				F55F323D1F2B942E00B7AEB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +319,7 @@
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				46AACDCF1F3E0B10006C17EC /* WebViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
+				F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */,
 				9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
@@ -326,6 +332,7 @@
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 				46AACDD01F3E0B14006C17EC /* TheatreDetailsViewController.swift in Sources */,
 				F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */,
+				F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */,
 				F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */,
 				F5756DE71F2EB4570037834B /* Extensions.swift in Sources */,
 				9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */,
