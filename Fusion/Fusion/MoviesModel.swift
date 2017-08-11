@@ -31,7 +31,7 @@ class MoviesModel {
                 let backdropurl = baseURL + backdrop
                 let overview = temp["overview"] as! String
                 let releaseDate = temp["release_date"] as! String
-                self.movieDetails.append(["MovieTitle":title, "MovieID":id, "Rating":voteAverage, "MoviePoster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
+                self.movieDetails.append(["Title":title, "ID":id, "Rating":voteAverage, "Poster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
             compHandler(self.movieDetails)
         }

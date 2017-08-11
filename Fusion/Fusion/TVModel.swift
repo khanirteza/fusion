@@ -31,7 +31,8 @@ class TVModel {
                 let backdropurl = "\(baseURL)" + "\(backdrop)"
                 let overview = temp["overview"] as! String
                 let firstAirDate = temp["first_air_date"] as! String
-                self.showDetails.append(["ShowTitle":title, "ShowID":id, "Rating":voteAverage, "ShowPoster": posterurl, "BackdropPoster": backdropurl,  "Overview":overview, "FirstAired":firstAirDate])
+                let releaseDate = temp["first_air_date"] as! String
+                self.showDetails.append(["Title":title, "ID":id, "Rating":voteAverage, "Poster":posterurl, "BackdropPoster":backdropurl, "Overview":overview, "Released":releaseDate])
             }
             compHandler(self.showDetails)
         }

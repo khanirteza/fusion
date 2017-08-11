@@ -17,16 +17,23 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     
     var detailArray = [String:Any]()
+    var x:Bool?
+    
+    @IBOutlet weak var showNearByTheatersButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if x == false {
+            showNearByTheatersButton.isHidden = true
+        }
         
         releasedLabel.text = "Released: \(detailArray["Released"] as! String)"
         ratingLabel.text = "Rating: \(detailArray["Rating"] as! Double)"
         overviewLabel.text = detailArray["Overview"] as? String
         overviewLabel.numberOfLines = 0
         
-        let posterUrl = URL.init(string: (detailArray["MoviePoster"] as! String))
+        let posterUrl = URL.init(string: (detailArray["Poster"] as! String))
         let wallPosterUrl = URL.init(string: detailArray["BackdropPoster"] as! String)
         do {
             let posterData = try Data.init(contentsOf: posterUrl!)
