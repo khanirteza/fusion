@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462FFE881F3E22110052A496 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 462FFE871F3E22110052A496 /* APIKey.plist */; };
 		46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */; };
 		46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */; };
 		46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */; };
-		46AACDCF1F3E0B10006C17EC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519ECD01F3CCD6C006E65EC /* WebViewController.swift */; };
-		46AACDD01F3E0B14006C17EC /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */; };
-		46AACDD21F3E0B4F006C17EC /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46AACDD11F3E0B4E006C17EC /* APIKey.plist */; };
 		9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF1661F3CAD020056911B /* MoviesModel.swift */; };
 		9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF16B1F3CBA8D0056911B /* TVModel.swift */; };
 		9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4C1F3944E90031260F /* SeeAllViewController.swift */; };
@@ -33,18 +31,15 @@
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
-		F5ADF2471F3E153500192575 /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ADF2461F3E153500192575 /* APIKey.plist */; };
-		F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */; };
-		F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F519ECD01F3CCD6C006E65EC /* WebViewController.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		43C883C88A0204B070493FFE /* Pods-Fusion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.debug.xcconfig"; sourceTree = "<group>"; };
+		462FFE871F3E22110052A496 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNearbyTheatresViewController.swift; sourceTree = "<group>"; };
 		46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetails.swift; sourceTree = "<group>"; };
 		46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
-		46AACDD11F3E0B4E006C17EC /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		96C8003A3331F213E41C16BD /* Pods-Fusion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.release.xcconfig"; sourceTree = "<group>"; };
 		9C80045799D0CCE9CF8953E3 /* Pods_Fusion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fusion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1DF1661F3CAD020056911B /* MoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
@@ -52,7 +47,6 @@
 		9E601C4C1F3944E90031260F /* SeeAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
 		9E601C4E1F3A0A560031260F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F51149B01F2BDCD40006268B /* FusionDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FusionDatabase.xcdatamodel; sourceTree = "<group>"; };
-		F519ECD01F3CCD6C006E65EC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		F52634D11F2DA18A008B068E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F55650141F2F73DE00350FD4 /* UserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataProvider.swift; sourceTree = "<group>"; };
 		F55F32341F2B942E00B7AEB2 /* Fusion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fusion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +64,6 @@
 		F5756DEC1F2EC3F20037834B /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
 		F5ADF2461F3E153500192575 /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
-		F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
 		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
 		F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462FFE861F3E20850052A496 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F5ADF2461F3E153500192575 /* APIKey.plist */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		9E1DF16A1F3CBA6F0056911B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +121,7 @@
 				F55F32351F2B942E00B7AEB2 /* Products */,
 				CC39B3404C90E8132414E8D3 /* Pods */,
 				B346435DA847D40EEAC4284D /* Frameworks */,
+				462FFE861F3E20850052A496 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,8 +157,6 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
-				F519ECD01F3CCD6C006E65EC /* WebViewController.swift */,
-				F5B4FCCE1F3E07CD00BD1F56 /* TheatreDetailsViewController.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 				F55F324C1F2B9CF600B7AEB2 /* GoogleService-Info.plist */,
 				F55F323E1F2B942E00B7AEB2 /* Fusion.xcdatamodeld */,
 				F5756DE61F2EB4570037834B /* Extensions.swift */,
-				46AACDD11F3E0B4E006C17EC /* APIKey.plist */,
+				462FFE871F3E22110052A496 /* APIKey.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,9 +237,8 @@
 			files = (
 				F55F32451F2B942E00B7AEB2 /* LaunchScreen.storyboard in Resources */,
 				F55F324D1F2B9CF700B7AEB2 /* GoogleService-Info.plist in Resources */,
-				46AACDD21F3E0B4F006C17EC /* APIKey.plist in Resources */,
 				F55F32421F2B942E00B7AEB2 /* Assets.xcassets in Resources */,
-				F5ADF2471F3E153500192575 /* APIKey.plist in Resources */,
+				462FFE881F3E22110052A496 /* APIKey.plist in Resources */,
 				F55F323D1F2B942E00B7AEB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,9 +316,7 @@
 				F55650151F2F73DE00350FD4 /* UserDataProvider.swift in Sources */,
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
-				46AACDCF1F3E0B10006C17EC /* WebViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
-				F5B4FCD01F3E0AD900BD1F56 /* WebViewController.swift in Sources */,
 				9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
@@ -330,9 +327,7 @@
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
 				F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */,
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
-				46AACDD01F3E0B14006C17EC /* TheatreDetailsViewController.swift in Sources */,
 				F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */,
-				F5B4FCCF1F3E0ACE00BD1F56 /* TheatreDetailsViewController.swift in Sources */,
 				F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */,
 				F5756DE71F2EB4570037834B /* Extensions.swift in Sources */,
 				9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */,
