@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13154.30" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="User" representedClassName=".User" syncable="YES" codeGenerationType="class">
-        <attribute name="emailAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPhoto" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="zipCode" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="watchlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Watchlist" inverseName="user" inverseEntity="Watchlist" syncable="YES"/>
     </entity>
     <entity name="Watchlist" representedClassName=".Watchlist" syncable="YES" codeGenerationType="class">
-        <attribute name="contentIDs" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
+        <attribute name="contentID" optional="YES" attributeType="String" customClassName="NSArray" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="User" inverseName="watchlist" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-308" positionY="-27" width="128" height="133"/>
-        <element name="Watchlist" positionX="-54" positionY="27" width="128" height="88"/>
+        <element name="User" positionX="-308" positionY="-27" width="128" height="135"/>
+        <element name="Watchlist" positionX="-54" positionY="27" width="128" height="90"/>
     </elements>
 </model>

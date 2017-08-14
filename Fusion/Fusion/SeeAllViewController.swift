@@ -17,6 +17,8 @@ class SeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
+        
         if x == false {
             let modal = TVModel.init()
             
@@ -85,6 +87,16 @@ class SeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             destinationVC.detailArray = MovieDetails[indexPath!.row]
         }
+    }
+    
+    func setNavigationBar(){
+        let userProfilePhoto = UserDataProvider.getUserPhoto()
+        
+        let userProfileButtonView = UIImageView(frame: CGRect(x: 0, y: 150, width: 40, height: 40))
+        userProfileButtonView.contentMode = .scaleAspectFit
+        userProfileButtonView.image = userProfilePhoto
+        let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
+        navigationItem.rightBarButtonItem = userPhotoButton
     }
     
 }

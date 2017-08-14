@@ -25,6 +25,7 @@ class TVViewController: UIViewController, UICollectionViewDelegate, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         
         let modal = TVModel.init()
         
@@ -186,5 +187,15 @@ class TVViewController: UIViewController, UICollectionViewDelegate, UICollection
             destinationVC.title = MostPopularShowDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = MostPopularShowDetails[indexPath!.row]
         }
+    }
+    
+    func setNavigationBar(){
+        let userProfilePhoto = UserDataProvider.getUserPhoto()
+        
+        let userProfileButtonView = UIImageView(frame: CGRect(x: 0, y: 150, width: 40, height: 40))
+        userProfileButtonView.contentMode = .scaleAspectFit
+        userProfileButtonView.image = userProfilePhoto
+        let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
+        navigationItem.rightBarButtonItem = userPhotoButton
     }
 }

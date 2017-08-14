@@ -69,6 +69,8 @@
 		F5756DE81F2EC3DC0037834B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		F5756DEC1F2EC3F20037834B /* TVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
+		F59E83B61F40A0E0001DA26C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		F5A01EFB1F40D45500599970 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
 		F5A348C21F3E6A44008BDF7E /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
@@ -148,8 +150,10 @@
 				9E601C4C1F3944E90031260F /* SeeAllViewController.swift */,
 				9E601C4E1F3A0A560031260F /* DetailsViewController.swift */,
 				F5756DEC1F2EC3F20037834B /* TVViewController.swift */,
+				F5A01EFB1F40D45500599970 /* ProfileMenuViewController.swift */,
 				F55650141F2F73DE00350FD4 /* UserDataProvider.swift */,
 				F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */,
+				F59E83B61F40A0E0001DA26C /* DataModel.swift */,
 				F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */,
 				F55F323B1F2B942E00B7AEB2 /* Main.storyboard */,
 				F51149AF1F2BDCD40006268B /* FusionDatabase.xcdatamodeld */,
@@ -340,6 +344,8 @@
 				4604AF231F41F1AC006AB36C /* TheatreDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
+				F5A01EFC1F40D45500599970 /* ProfileMenuViewController.swift in Sources */,
+				F59E83B71F40A0E0001DA26C /* DataModel.swift in Sources */,
 				F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */,
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 				9E1DF1781F3E0BFF0056911B /* TheatreDetailsViewController.swift in Sources */,

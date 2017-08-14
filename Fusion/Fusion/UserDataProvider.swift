@@ -14,14 +14,13 @@ import SwiftKeychainWrapper
 class UserDataProvider{
     static var user = [User]()
     static let loggedInUser = KeychainWrapper.standard.string(forKey: currentUser)
-    static var homeZipCode = String()
     
     static let userFetchRequest = NSFetchRequest<User>(entityName: "User")
     
     
     
     public static func getUserPhoto() -> UIImage{
-        userFetchRequest.predicate = NSPredicate(format: "emailAddress == %@", loggedInUser!)
+        userFetchRequest.predicate = NSPredicate(format: "userID == %@", loggedInUser!)
         do{
             user = try CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.fetch(userFetchRequest)
             return UIImage.init(data: (user.first?.userPhoto)!)!
@@ -32,7 +31,7 @@ class UserDataProvider{
     }
     
     public static func getUserZipCode() -> String?{
-        userFetchRequest.predicate = NSPredicate(format: "emailAddress == %@", loggedInUser!)
+        userFetchRequest.predicate = NSPredicate(format: "userID == %@", loggedInUser!)
         do{
             user = try CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.fetch(userFetchRequest)
             return (user.first?.zipCode)!
@@ -41,4 +40,5 @@ class UserDataProvider{
         }
         return nil
     }
+    
 }
