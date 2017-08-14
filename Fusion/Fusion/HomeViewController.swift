@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableViewController: UITableView!
     
     var details = [[String:Any]]()
+    var y = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +62,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = details[indexPath.row]["Title"] as! String
         cell.detailTextLabel?.text = details[indexPath.row]["Released"] as! String
+        
+        let url = URL.init(string: (details[indexPath.row]["Poster"] as? String)!)
+        do {
+            let data = try Data.init(contentsOf: url!)
+            let image = UIImage.init(data: data)
+            cell.imageView?.image = image
+        }catch let err {
+            print(err)
+        }
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "watchListSegue" {
+            let destination = segue.destination as! DetailsViewController
+            let indexPath = self.tableViewController.indexPathForSelectedRow
+            if y == true {
+                destination.x = true
+            } else {
+                destination.x = false
+            }
+            destination.y = false
+            destination.title = details[indexPath!.row]["Title"] as? String
+            
+            destination.detailArray = details[indexPath!.row]
+        }
+    }
     
 }

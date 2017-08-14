@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
     
     var detailArray = [String:Any]()
     var x:Bool?
+    var y:Bool?
     
     @IBOutlet weak var showNearByTheatersButton: UIButton!
     
@@ -25,6 +26,9 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
+        if y == false {
+            showNearByTheatersButton.isHidden = true
+        }
         
         if x == false {
             showNearByTheatersButton.isHidden = true
