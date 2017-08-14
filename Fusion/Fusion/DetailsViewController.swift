@@ -78,5 +78,9 @@ class DetailsViewController: UIViewController {
     @IBAction func addToWatchlistButton(_ sender: UIButton) {
         let contentID = Int(detailArray["ID"] as! Double)
         DataModel.addToWatchlist(contentID: "\(contentID)")
+        let alert = UIAlertController.init(title: "Added to WatchList", message: "Successfully !!!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
