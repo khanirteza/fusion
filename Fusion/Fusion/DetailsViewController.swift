@@ -75,4 +75,8 @@ class DetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = userPhotoButton
     }
 
+    @IBAction func addToWatchlistButton(_ sender: UIButton) {
+        let contentID = Int(detailArray["ID"] as! Double)
+        DataModel.addToWatchlist(contentID: "\(contentID)")
+    }
 }

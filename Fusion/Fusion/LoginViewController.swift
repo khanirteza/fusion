@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         let password = passwordTextField.text
         if userName != "" && password != "" {
             if checkLogin(userName: userName!, password: password!){
+                KeychainWrapper.standard.set(userName!, forKey: currentUser)
                 performSegue(withIdentifier: "loginSuccessful", sender: view)
             }
             else{

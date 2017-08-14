@@ -20,19 +20,20 @@ class DataModel{
     
     static func getWatchlist() -> [String]?{
         var watchlist = [Watchlist]()
-        var retWatchlist:[String]? = nil
         let watchlistFetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
         watchlistFetchRequest.predicate = NSPredicate(format: "userID == %@", UserDataProvider.loggedInUser!)
         do{
             //CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.has
             watchlist = try CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.fetch(watchlistFetchRequest)
+            var retWatchlist = [String]()
             for item in watchlist{
-                retWatchlist?.append(item.contentID!)
+                retWatchlist.append(item.contentID!)
             }
             
+            return retWatchlist
         } catch let error{
             print(error)
         }
-        return retWatchlist
+        return nil
     }
 }

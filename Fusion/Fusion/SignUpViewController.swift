@@ -88,7 +88,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             user.firstName = firstName
             user.lastName = lastName
-            user.emailAddress = emailAddress
+            user.userID = emailAddress
             user.zipCode = zipCode
             user.userPhoto = UIImagePNGRepresentation(userPhoto.image!)
             

@@ -20,13 +20,12 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setNavigationBar()
-        if let watchlist = DataModel.getWatchlist(){
-            print(watchlist)
-        }
-        else{
-            print("nothing")
-        }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let watchlist = DataModel.getWatchlist()
+        print(watchlist)
     }
     
     

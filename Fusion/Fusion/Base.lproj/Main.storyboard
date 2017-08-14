@@ -886,6 +886,13 @@
                                             <segue destination="dNy-Pk-cyh" kind="show" id="ADn-ZU-Z26"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mek-Sq-8PU">
+                                        <rect key="frame" x="287" y="240" width="113" height="30"/>
+                                        <state key="normal" title="Add to Watchlist"/>
+                                        <connections>
+                                            <action selector="addToWatchlistButton:" destination="dD7-tJ-FHf" eventType="touchUpInside" id="5bv-Ux-dY4"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="zQ3-PN-07m" secondAttribute="trailing" constant="14" id="0uH-7a-p1G"/>
@@ -897,6 +904,7 @@
                                     <constraint firstItem="H55-Jy-njE" firstAttribute="leading" secondItem="ewi-ky-swP" secondAttribute="trailing" constant="8" symbolic="YES" id="Ful-nb-qBA"/>
                                     <constraint firstItem="Fpj-zB-Jvb" firstAttribute="top" secondItem="Dbq-aB-7t8" secondAttribute="bottom" constant="9" id="MUE-ba-qPo"/>
                                     <constraint firstItem="Fpj-zB-Jvb" firstAttribute="top" secondItem="zQ3-PN-07m" secondAttribute="bottom" constant="43" id="PDC-Vh-1bU"/>
+                                    <constraint firstItem="zQ3-PN-07m" firstAttribute="top" secondItem="Mek-Sq-8PU" secondAttribute="bottom" constant="3.6666666666666856" id="Th0-WC-LUC"/>
                                     <constraint firstItem="iBs-Lt-6oh" firstAttribute="top" secondItem="XgX-gX-ZCL" secondAttribute="top" constant="10" id="V7j-zw-9cP"/>
                                     <constraint firstItem="8Gf-HJ-Flv" firstAttribute="leading" secondItem="XgX-gX-ZCL" secondAttribute="leading" id="aix-ND-FS6"/>
                                     <constraint firstItem="H55-Jy-njE" firstAttribute="top" secondItem="8Gf-HJ-Flv" secondAttribute="bottom" constant="8" symbolic="YES" id="dd0-h8-l6U"/>
@@ -904,6 +912,7 @@
                                     <constraint firstItem="Fpj-zB-Jvb" firstAttribute="leading" secondItem="XgX-gX-ZCL" secondAttribute="leading" constant="14" id="fUf-hP-WLr"/>
                                     <constraint firstItem="H55-Jy-njE" firstAttribute="leading" secondItem="XgX-gX-ZCL" secondAttribute="leading" constant="114" id="g8G-Eu-DXo"/>
                                     <constraint firstItem="Dbq-aB-7t8" firstAttribute="leading" secondItem="Fpj-zB-Jvb" secondAttribute="leading" id="gcL-De-sow"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mek-Sq-8PU" secondAttribute="trailing" constant="14" id="lP9-QH-IdG"/>
                                     <constraint firstAttribute="bottom" secondItem="8Gf-HJ-Flv" secondAttribute="bottom" constant="388.33333333333331" id="lQy-ws-dtz"/>
                                     <constraint firstItem="zQ3-PN-07m" firstAttribute="top" secondItem="H55-Jy-njE" secondAttribute="bottom" constant="5" id="pDb-xF-QR0"/>
                                     <constraint firstItem="zQ3-PN-07m" firstAttribute="leading" secondItem="ewi-ky-swP" secondAttribute="trailing" constant="8" id="qxM-dA-XOP"/>
