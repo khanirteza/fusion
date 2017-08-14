@@ -22,7 +22,7 @@ class DataModel{
         var watchlist = [Watchlist]()
         var retWatchlist:[String]? = nil
         let watchlistFetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
-        watchlistFetchRequest.predicate = NSPredicate(format: "emailAddress == %@", UserDataProvider.loggedInUser!)
+        watchlistFetchRequest.predicate = NSPredicate(format: "userID == %@", UserDataProvider.loggedInUser!)
         do{
             //CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.has
             watchlist = try CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.fetch(watchlistFetchRequest)
