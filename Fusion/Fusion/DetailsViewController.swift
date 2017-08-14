@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController {
     
     var detailArray = [String:Any]()
     var x:Bool?
+    var y:Bool?
     
     @IBOutlet weak var showNearByTheatersButton: UIButton!
     
@@ -25,6 +26,9 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         setNavigationBar()
+        if y == false {
+            showNearByTheatersButton.isHidden = true
+        }
         
         if x == false {
             showNearByTheatersButton.isHidden = true
@@ -78,5 +82,9 @@ class DetailsViewController: UIViewController {
     @IBAction func addToWatchlistButton(_ sender: UIButton) {
         let contentID = Int(detailArray["ID"] as! Double)
         DataModel.addToWatchlist(contentID: "\(contentID)")
+        let alert = UIAlertController.init(title: "Added to WatchList", message: "Successfully !!!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
