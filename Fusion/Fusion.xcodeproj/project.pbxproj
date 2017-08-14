@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4604AF231F41F1AC006AB36C /* TheatreDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604AF221F41F1AC006AB36C /* TheatreDetails.swift */; };
+		4604AF251F41F668006AB36C /* ShowWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604AF241F41F668006AB36C /* ShowWebView.swift */; };
+		4604AF271F41FD80006AB36C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604AF261F41FD80006AB36C /* MapViewModel.swift */; };
 		46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */; };
 		46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */; };
 		46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */; };
@@ -30,9 +33,6 @@
 		F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DE81F2EC3DC0037834B /* HomeViewController.swift */; };
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
-		F59E83B71F40A0E0001DA26C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59E83B61F40A0E0001DA26C /* DataModel.swift */; };
-		F5A01EFC1F40D45500599970 /* ProfileMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A01EFB1F40D45500599970 /* ProfileMenuViewController.swift */; };
-		F5A348C01F3E40E1008BDF7E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A348BF1F3E40E1008BDF7E /* WebViewController.swift */; };
 		F5A348C31F3E6A44008BDF7E /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A348C21F3E6A44008BDF7E /* APIKey.plist */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
@@ -40,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		43C883C88A0204B070493FFE /* Pods-Fusion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fusion.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fusion/Pods-Fusion.debug.xcconfig"; sourceTree = "<group>"; };
+		4604AF221F41F1AC006AB36C /* TheatreDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetails.swift; sourceTree = "<group>"; };
+		4604AF241F41F668006AB36C /* ShowWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowWebView.swift; sourceTree = "<group>"; };
+		4604AF261F41FD80006AB36C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNearbyTheatresViewController.swift; sourceTree = "<group>"; };
 		46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationDetails.swift; sourceTree = "<group>"; };
 		46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		F59E83B61F40A0E0001DA26C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		F5A01EFB1F40D45500599970 /* ProfileMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuViewController.swift; sourceTree = "<group>"; };
 		F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
-		F5A348BF1F3E40E1008BDF7E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ../../../../WebViewController.swift; sourceTree = "<group>"; };
 		F5A348C21F3E6A44008BDF7E /* APIKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIKey.plist; sourceTree = "<group>"; };
 		F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDataProvider.swift; sourceTree = "<group>"; };
 		F5B541D71F2BB8B100E845A5 /* Fusion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fusion-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				9E1DF1661F3CAD020056911B /* MoviesModel.swift */,
 				9E1DF16B1F3CBA8D0056911B /* TVModel.swift */,
+				4604AF261F41FD80006AB36C /* MapViewModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -159,9 +162,10 @@
 				46AACDBE1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift */,
 				46AACDC01F3BF788006C17EC /* AnnotationDetails.swift */,
 				9E1DF1771F3E0BF80056911B /* TheatreDetailsViewController.swift */,
-				F5A348BF1F3E40E1008BDF7E /* WebViewController.swift */,
 				46AACDC21F3BF7DB006C17EC /* CustomAnnotationView.swift */,
 				F5A348BB1F3E2CCB008BDF7E /* TheatreDetailsViewController.swift */,
+				4604AF221F41F1AC006AB36C /* TheatreDetails.swift */,
+				4604AF241F41F668006AB36C /* ShowWebView.swift */,
 			);
 			path = Fusion;
 			sourceTree = "<group>";
@@ -327,15 +331,17 @@
 			files = (
 				F55650151F2F73DE00350FD4 /* UserDataProvider.swift in Sources */,
 				F51149B11F2BDCD40006268B /* FusionDatabase.xcdatamodeld in Sources */,
+				4604AF251F41F668006AB36C /* ShowWebView.swift in Sources */,
 				F55F323A1F2B942E00B7AEB2 /* LoginViewController.swift in Sources */,
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
-				F5A348C01F3E40E1008BDF7E /* WebViewController.swift in Sources */,
 				9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */,
 				46AACDC11F3BF788006C17EC /* AnnotationDetails.swift in Sources */,
+				4604AF271F41FD80006AB36C /* MapViewModel.swift in Sources */,
+				4604AF231F41F1AC006AB36C /* TheatreDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
 				F5A01EFC1F40D45500599970 /* ProfileMenuViewController.swift in Sources */,
