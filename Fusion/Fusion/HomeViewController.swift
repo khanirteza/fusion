@@ -50,7 +50,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         userProfileButtonView.contentMode = .scaleAspectFit
         userProfileButtonView.image = userProfilePhoto
         let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
-        navigationItem.rightBarButtonItem = userPhotoButton
+        navigationItem.leftBarButtonItem = userPhotoButton
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,4 +90,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "logoutSegue", sender: sender)
+    }
 }

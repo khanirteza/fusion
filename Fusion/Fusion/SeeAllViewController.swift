@@ -96,7 +96,7 @@ class SeeAllViewController: UIViewController, UITableViewDelegate, UITableViewDa
         userProfileButtonView.contentMode = .scaleAspectFit
         userProfileButtonView.image = userProfilePhoto
         let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
-        navigationItem.rightBarButtonItem = userPhotoButton
+        navigationItem.leftBarButtonItem = userPhotoButton
     }
     
 }

@@ -13,7 +13,7 @@ import CoreData
 class DataModel{
     static func addToWatchlist(contentID: String){
         let watchlist = NSEntityDescription.insertNewObject(forEntityName: "Watchlist", into: CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext) as! Watchlist
-        watchlist.userID = UserDataProvider.loggedInUser
+        watchlist.userID = UserDataProvider.getLoggedInUser()
         watchlist.contentID = contentID
         CoreDataStack.sharedCoreDataStack.saveContext()
     }
@@ -21,7 +21,7 @@ class DataModel{
     static func getWatchlist() -> [String]?{
         var watchlist = [Watchlist]()
         let watchlistFetchRequest = NSFetchRequest<Watchlist>(entityName: "Watchlist")
-        watchlistFetchRequest.predicate = NSPredicate(format: "userID == %@", UserDataProvider.loggedInUser!)
+        watchlistFetchRequest.predicate = NSPredicate(format: "userID == %@", UserDataProvider.getLoggedInUser())
         do{
             //CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.has
             watchlist = try CoreDataStack.sharedCoreDataStack.persistentContainer.viewContext.fetch(watchlistFetchRequest)

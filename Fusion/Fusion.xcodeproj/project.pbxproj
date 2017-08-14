@@ -16,7 +16,6 @@
 		9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF1661F3CAD020056911B /* MoviesModel.swift */; };
 		9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF16B1F3CBA8D0056911B /* TVModel.swift */; };
 		9E1DF1781F3E0BFF0056911B /* TheatreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1DF1771F3E0BF80056911B /* TheatreDetailsViewController.swift */; };
-		9E209A771F4222650064811F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E209A761F4222620064811F /* WebViewController.swift */; };
 		9E209A791F42252D0064811F /* WatchLaterDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E209A781F42252D0064811F /* WatchLaterDetails.swift */; };
 		9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4C1F3944E90031260F /* SeeAllViewController.swift */; };
 		9E601C4F1F3A0A560031260F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601C4E1F3A0A560031260F /* DetailsViewController.swift */; };
@@ -35,6 +34,7 @@
 		F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DE81F2EC3DC0037834B /* HomeViewController.swift */; };
 		F5756DEB1F2EC3EB0037834B /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEA1F2EC3EB0037834B /* MoviesViewController.swift */; };
 		F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5756DEC1F2EC3F20037834B /* TVViewController.swift */; };
+		F5A041ED1F4232DB00FCAF7A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59E83B61F40A0E0001DA26C /* DataModel.swift */; };
 		F5A348C31F3E6A44008BDF7E /* APIKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A348C21F3E6A44008BDF7E /* APIKey.plist */; };
 		F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AD0CAD1F3D7E360026B184 /* MiscDataProvider.swift */; };
 		F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C2F83D1F2E54A0008BB4DC /* CoreDataStack.swift */; };
@@ -53,7 +53,6 @@
 		9E1DF1661F3CAD020056911B /* MoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
 		9E1DF16B1F3CBA8D0056911B /* TVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVModel.swift; sourceTree = "<group>"; };
 		9E1DF1771F3E0BF80056911B /* TheatreDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheatreDetailsViewController.swift; sourceTree = "<group>"; };
-		9E209A761F4222620064811F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		9E209A781F42252D0064811F /* WatchLaterDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLaterDetails.swift; sourceTree = "<group>"; };
 		9E601C4C1F3944E90031260F /* SeeAllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeeAllViewController.swift; sourceTree = "<group>"; };
 		9E601C4E1F3A0A560031260F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +189,7 @@
 		F581D96B1F3E2BC800CB9A29 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -343,7 +343,6 @@
 				F5756DED1F2EC3F20037834B /* TVViewController.swift in Sources */,
 				9E1DF16C1F3CBA8D0056911B /* TVModel.swift in Sources */,
 				46AACDBF1F3BF493006C17EC /* ShowNearbyTheatresViewController.swift in Sources */,
-				9E209A771F4222650064811F /* WebViewController.swift in Sources */,
 				9E1DF1671F3CAD020056911B /* MoviesModel.swift in Sources */,
 				F55F32381F2B942E00B7AEB2 /* AppDelegate.swift in Sources */,
 				46AACDC31F3BF7DB006C17EC /* CustomAnnotationView.swift in Sources */,
@@ -352,11 +351,10 @@
 				4604AF231F41F1AC006AB36C /* TheatreDetails.swift in Sources */,
 				F5756DE91F2EC3DC0037834B /* HomeViewController.swift in Sources */,
 				9E601C4D1F3944E90031260F /* SeeAllViewController.swift in Sources */,
-				F5A01EFC1F40D45500599970 /* ProfileMenuViewController.swift in Sources */,
-				F59E83B71F40A0E0001DA26C /* DataModel.swift in Sources */,
 				F5C2F83E1F2E54A0008BB4DC /* CoreDataStack.swift in Sources */,
 				F55F32401F2B942E00B7AEB2 /* Fusion.xcdatamodeld in Sources */,
 				9E1DF1781F3E0BFF0056911B /* TheatreDetailsViewController.swift in Sources */,
+				F5A041ED1F4232DB00FCAF7A /* DataModel.swift in Sources */,
 				F5AD0CAE1F3D7E360026B184 /* MiscDataProvider.swift in Sources */,
 				F52634D21F2DA18A008B068E /* SignUpViewController.swift in Sources */,
 				F5756DE71F2EB4570037834B /* Extensions.swift in Sources */,

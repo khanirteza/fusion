@@ -76,14 +76,14 @@ class DetailsViewController: UIViewController {
         userProfileButtonView.contentMode = .scaleAspectFit
         userProfileButtonView.image = userProfilePhoto
         let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
-        navigationItem.rightBarButtonItem = userPhotoButton
+        navigationItem.leftBarButtonItem = userPhotoButton
     }
 
     @IBAction func addToWatchlistButton(_ sender: UIButton) {
         let contentID = Int(detailArray["ID"] as! Double)
         DataModel.addToWatchlist(contentID: "\(contentID)")
         let alert = UIAlertController.init(title: "Added to WatchList", message: "Successfully !!!", preferredStyle: .alert)
-        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction.init(title: "Okay", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }

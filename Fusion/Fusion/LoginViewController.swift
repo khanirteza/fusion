@@ -24,6 +24,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        KeychainWrapper.standard.removeObject(forKey: currentUser)
+        print(KeychainWrapper.standard.string(forKey: currentUser))
+    }
+    
     @IBAction func loginAction(_ sender: UIButton) {
         let userName = userNameTextField.text
         let password = passwordTextField.text

@@ -196,6 +196,6 @@ class TVViewController: UIViewController, UICollectionViewDelegate, UICollection
         userProfileButtonView.contentMode = .scaleAspectFit
         userProfileButtonView.image = userProfilePhoto
         let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
-        navigationItem.rightBarButtonItem = userPhotoButton
+        navigationItem.leftBarButtonItem = userPhotoButton
     }
 }

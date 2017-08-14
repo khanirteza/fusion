@@ -198,6 +198,6 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
         userProfileButtonView.contentMode = .scaleAspectFit
         userProfileButtonView.image = userProfilePhoto
         let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
-        navigationItem.rightBarButtonItem = userPhotoButton
+        navigationItem.leftBarButtonItem = userPhotoButton
     }
 }
