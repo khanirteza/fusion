@@ -9,12 +9,12 @@
         <relationship name="watchlist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Watchlist" inverseName="user" inverseEntity="Watchlist" syncable="YES"/>
     </entity>
     <entity name="Watchlist" representedClassName=".Watchlist" syncable="YES" codeGenerationType="class">
-        <attribute name="contentIDs" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
+        <attribute name="contentID" optional="YES" attributeType="String" customClassName="NSArray" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="User" inverseName="watchlist" inverseEntity="User" syncable="YES"/>
     </entity>
     <elements>
         <element name="User" positionX="-308" positionY="-27" width="128" height="133"/>
-        <element name="Watchlist" positionX="-54" positionY="27" width="128" height="88"/>
+        <element name="Watchlist" positionX="-54" positionY="27" width="128" height="90"/>
     </elements>
 </model>

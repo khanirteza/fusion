@@ -14,7 +14,6 @@ import SwiftKeychainWrapper
 class UserDataProvider{
     static var user = [User]()
     static let loggedInUser = KeychainWrapper.standard.string(forKey: currentUser)
-    static var homeZipCode = String()
     
     static let userFetchRequest = NSFetchRequest<User>(entityName: "User")
     
@@ -41,4 +40,5 @@ class UserDataProvider{
         }
         return nil
     }
+    
 }

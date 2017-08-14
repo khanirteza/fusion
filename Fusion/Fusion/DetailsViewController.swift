@@ -24,6 +24,8 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationBar()
+        
         if x == false {
             showNearByTheatersButton.isHidden = true
         }
@@ -62,5 +64,15 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setNavigationBar(){
+        let userProfilePhoto = UserDataProvider.getUserPhoto()
+        
+        let userProfileButtonView = UIImageView(frame: CGRect(x: 0, y: 150, width: 40, height: 40))
+        userProfileButtonView.contentMode = .scaleAspectFit
+        userProfileButtonView.image = userProfilePhoto
+        let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
+        navigationItem.rightBarButtonItem = userPhotoButton
+    }
 
 }

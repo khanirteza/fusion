@@ -13,16 +13,18 @@ import CoreData
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var userPhotoImageView: UIImageView!
-    
-    
     //let logNotification = "loggedInUser"
+    @IBOutlet weak var tableViewController: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        userPhotoImageView.image = UserDataProvider.getUserPhoto()
-        print(MiscDataProvider.TMDB_API_Key)
+        setNavigationBar()
+//        guard let watchlist = DataModel.getWatchlist() else{
+//            print("nothing in the watchlist")
+//            return
+//        }
+        
     }
     
     
@@ -36,5 +38,15 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func setNavigationBar(){
+        let userProfilePhoto = UserDataProvider.getUserPhoto()
+        
+        let userProfileButtonView = UIImageView(frame: CGRect(x: 0, y: 150, width: 40, height: 40))
+        userProfileButtonView.contentMode = .scaleAspectFit
+        userProfileButtonView.image = userProfilePhoto
+        let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
+        navigationItem.rightBarButtonItem = userPhotoButton
+    }
+    
 }

@@ -25,7 +25,7 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setNavigationBar()
         let modal = MoviesModel.init()
         
         modal.NetworkCall(urlString: "https://api.themoviedb.org/3/movie/now_playing?api_key=" + MiscDataProvider.TMDB_API_Key + "&language=en-US&page=1") {
@@ -189,5 +189,15 @@ class MoviesViewController: UIViewController, UICollectionViewDelegate, UICollec
             destinationVC.title = mostPopularMovieDetails[indexPath!.row]["Title"] as? String
             destinationVC.detailArray = mostPopularMovieDetails[indexPath!.row]
         }
+    }
+    
+    func setNavigationBar(){
+        let userProfilePhoto = UserDataProvider.getUserPhoto()
+        
+        let userProfileButtonView = UIImageView(frame: CGRect(x: 0, y: 150, width: 40, height: 40))
+        userProfileButtonView.contentMode = .scaleAspectFit
+        userProfileButtonView.image = userProfilePhoto
+        let userPhotoButton = UIBarButtonItem(customView: userProfileButtonView)
+        navigationItem.rightBarButtonItem = userPhotoButton
     }
 }
