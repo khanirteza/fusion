@@ -10,8 +10,19 @@ import UIKit
 
 class ShowWebView: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var webView: UIWebView!
     var urlString : String?
+    
+    //stop spinner
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        spinner.stopAnimating()
+    }
+    //show spinner
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        spinner.startAnimating()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
