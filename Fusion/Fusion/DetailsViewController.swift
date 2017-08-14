@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var releasedLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var addWatchLaterButton: UIButton!
     
     var detailArray = [String:Any]()
     var x:Bool?
@@ -32,7 +33,9 @@ class DetailsViewController: UIViewController {
         
         if x == false {
             showNearByTheatersButton.isHidden = true
+            addWatchLaterButton.isHidden = true
         }
+        
         
         releasedLabel.text = "Released: \(detailArray["Released"] as! String)"
         ratingLabel.text = "Rating: \(detailArray["Rating"] as! Double)"
